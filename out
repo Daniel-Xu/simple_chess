@@ -1,0 +1,2249 @@
+
+app:     file format elf32-i386
+
+
+Disassembly of section .init:
+
+080483f8 <_init>:
+ 80483f8:	55                   	push   %ebp
+ 80483f9:	89 e5                	mov    %esp,%ebp
+ 80483fb:	53                   	push   %ebx
+ 80483fc:	83 ec 04             	sub    $0x4,%esp
+ 80483ff:	e8 00 00 00 00       	call   8048404 <_init+0xc>
+ 8048404:	5b                   	pop    %ebx
+ 8048405:	81 c3 f0 2b 00 00    	add    $0x2bf0,%ebx
+ 804840b:	8b 93 fc ff ff ff    	mov    -0x4(%ebx),%edx
+ 8048411:	85 d2                	test   %edx,%edx
+ 8048413:	74 05                	je     804841a <_init+0x22>
+ 8048415:	e8 3e 00 00 00       	call   8048458 <__gmon_start__@plt>
+ 804841a:	e8 81 01 00 00       	call   80485a0 <frame_dummy>
+ 804841f:	e8 1c 13 00 00       	call   8049740 <__do_global_ctors_aux>
+ 8048424:	58                   	pop    %eax
+ 8048425:	5b                   	pop    %ebx
+ 8048426:	c9                   	leave  
+ 8048427:	c3                   	ret    
+
+Disassembly of section .plt:
+
+08048428 <open@plt-0x10>:
+ 8048428:	ff 35 f8 af 04 08    	pushl  0x804aff8
+ 804842e:	ff 25 fc af 04 08    	jmp    *0x804affc
+ 8048434:	00 00                	add    %al,(%eax)
+	...
+
+08048438 <open@plt>:
+ 8048438:	ff 25 00 b0 04 08    	jmp    *0x804b000
+ 804843e:	68 00 00 00 00       	push   $0x0
+ 8048443:	e9 e0 ff ff ff       	jmp    8048428 <_init+0x30>
+
+08048448 <mmap@plt>:
+ 8048448:	ff 25 04 b0 04 08    	jmp    *0x804b004
+ 804844e:	68 08 00 00 00       	push   $0x8
+ 8048453:	e9 d0 ff ff ff       	jmp    8048428 <_init+0x30>
+
+08048458 <__gmon_start__@plt>:
+ 8048458:	ff 25 08 b0 04 08    	jmp    *0x804b008
+ 804845e:	68 10 00 00 00       	push   $0x10
+ 8048463:	e9 c0 ff ff ff       	jmp    8048428 <_init+0x30>
+
+08048468 <memset@plt>:
+ 8048468:	ff 25 0c b0 04 08    	jmp    *0x804b00c
+ 804846e:	68 18 00 00 00       	push   $0x18
+ 8048473:	e9 b0 ff ff ff       	jmp    8048428 <_init+0x30>
+
+08048478 <__libc_start_main@plt>:
+ 8048478:	ff 25 10 b0 04 08    	jmp    *0x804b010
+ 804847e:	68 20 00 00 00       	push   $0x20
+ 8048483:	e9 a0 ff ff ff       	jmp    8048428 <_init+0x30>
+
+08048488 <read@plt>:
+ 8048488:	ff 25 14 b0 04 08    	jmp    *0x804b014
+ 804848e:	68 28 00 00 00       	push   $0x28
+ 8048493:	e9 90 ff ff ff       	jmp    8048428 <_init+0x30>
+
+08048498 <perror@plt>:
+ 8048498:	ff 25 18 b0 04 08    	jmp    *0x804b018
+ 804849e:	68 30 00 00 00       	push   $0x30
+ 80484a3:	e9 80 ff ff ff       	jmp    8048428 <_init+0x30>
+
+080484a8 <usleep@plt>:
+ 80484a8:	ff 25 1c b0 04 08    	jmp    *0x804b01c
+ 80484ae:	68 38 00 00 00       	push   $0x38
+ 80484b3:	e9 70 ff ff ff       	jmp    8048428 <_init+0x30>
+
+080484b8 <ioctl@plt>:
+ 80484b8:	ff 25 20 b0 04 08    	jmp    *0x804b020
+ 80484be:	68 40 00 00 00       	push   $0x40
+ 80484c3:	e9 60 ff ff ff       	jmp    8048428 <_init+0x30>
+
+080484c8 <printf@plt>:
+ 80484c8:	ff 25 24 b0 04 08    	jmp    *0x804b024
+ 80484ce:	68 48 00 00 00       	push   $0x48
+ 80484d3:	e9 50 ff ff ff       	jmp    8048428 <_init+0x30>
+
+080484d8 <close@plt>:
+ 80484d8:	ff 25 28 b0 04 08    	jmp    *0x804b028
+ 80484de:	68 50 00 00 00       	push   $0x50
+ 80484e3:	e9 40 ff ff ff       	jmp    8048428 <_init+0x30>
+
+080484e8 <__stack_chk_fail@plt>:
+ 80484e8:	ff 25 2c b0 04 08    	jmp    *0x804b02c
+ 80484ee:	68 58 00 00 00       	push   $0x58
+ 80484f3:	e9 30 ff ff ff       	jmp    8048428 <_init+0x30>
+
+080484f8 <exit@plt>:
+ 80484f8:	ff 25 30 b0 04 08    	jmp    *0x804b030
+ 80484fe:	68 60 00 00 00       	push   $0x60
+ 8048503:	e9 20 ff ff ff       	jmp    8048428 <_init+0x30>
+
+Disassembly of section .text:
+
+08048510 <_start>:
+ 8048510:	31 ed                	xor    %ebp,%ebp
+ 8048512:	5e                   	pop    %esi
+ 8048513:	89 e1                	mov    %esp,%ecx
+ 8048515:	83 e4 f0             	and    $0xfffffff0,%esp
+ 8048518:	50                   	push   %eax
+ 8048519:	54                   	push   %esp
+ 804851a:	52                   	push   %edx
+ 804851b:	68 d0 96 04 08       	push   $0x80496d0
+ 8048520:	68 e0 96 04 08       	push   $0x80496e0
+ 8048525:	51                   	push   %ecx
+ 8048526:	56                   	push   %esi
+ 8048527:	68 c4 85 04 08       	push   $0x80485c4
+ 804852c:	e8 47 ff ff ff       	call   8048478 <__libc_start_main@plt>
+ 8048531:	f4                   	hlt    
+ 8048532:	90                   	nop
+ 8048533:	90                   	nop
+ 8048534:	90                   	nop
+ 8048535:	90                   	nop
+ 8048536:	90                   	nop
+ 8048537:	90                   	nop
+ 8048538:	90                   	nop
+ 8048539:	90                   	nop
+ 804853a:	90                   	nop
+ 804853b:	90                   	nop
+ 804853c:	90                   	nop
+ 804853d:	90                   	nop
+ 804853e:	90                   	nop
+ 804853f:	90                   	nop
+
+08048540 <__do_global_dtors_aux>:
+ 8048540:	55                   	push   %ebp
+ 8048541:	89 e5                	mov    %esp,%ebp
+ 8048543:	53                   	push   %ebx
+ 8048544:	83 ec 04             	sub    $0x4,%esp
+ 8048547:	80 3d 20 b3 04 08 00 	cmpb   $0x0,0x804b320
+ 804854e:	75 3f                	jne    804858f <__do_global_dtors_aux+0x4f>
+ 8048550:	a1 24 b3 04 08       	mov    0x804b324,%eax
+ 8048555:	bb 20 af 04 08       	mov    $0x804af20,%ebx
+ 804855a:	81 eb 1c af 04 08    	sub    $0x804af1c,%ebx
+ 8048560:	c1 fb 02             	sar    $0x2,%ebx
+ 8048563:	83 eb 01             	sub    $0x1,%ebx
+ 8048566:	39 d8                	cmp    %ebx,%eax
+ 8048568:	73 1e                	jae    8048588 <__do_global_dtors_aux+0x48>
+ 804856a:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+ 8048570:	83 c0 01             	add    $0x1,%eax
+ 8048573:	a3 24 b3 04 08       	mov    %eax,0x804b324
+ 8048578:	ff 14 85 1c af 04 08 	call   *0x804af1c(,%eax,4)
+ 804857f:	a1 24 b3 04 08       	mov    0x804b324,%eax
+ 8048584:	39 d8                	cmp    %ebx,%eax
+ 8048586:	72 e8                	jb     8048570 <__do_global_dtors_aux+0x30>
+ 8048588:	c6 05 20 b3 04 08 01 	movb   $0x1,0x804b320
+ 804858f:	83 c4 04             	add    $0x4,%esp
+ 8048592:	5b                   	pop    %ebx
+ 8048593:	5d                   	pop    %ebp
+ 8048594:	c3                   	ret    
+ 8048595:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
+ 8048599:	8d bc 27 00 00 00 00 	lea    0x0(%edi,%eiz,1),%edi
+
+080485a0 <frame_dummy>:
+ 80485a0:	55                   	push   %ebp
+ 80485a1:	89 e5                	mov    %esp,%ebp
+ 80485a3:	83 ec 18             	sub    $0x18,%esp
+ 80485a6:	a1 24 af 04 08       	mov    0x804af24,%eax
+ 80485ab:	85 c0                	test   %eax,%eax
+ 80485ad:	74 12                	je     80485c1 <frame_dummy+0x21>
+ 80485af:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80485b4:	85 c0                	test   %eax,%eax
+ 80485b6:	74 09                	je     80485c1 <frame_dummy+0x21>
+ 80485b8:	c7 04 24 24 af 04 08 	movl   $0x804af24,(%esp)
+ 80485bf:	ff d0                	call   *%eax
+ 80485c1:	c9                   	leave  
+ 80485c2:	c3                   	ret    
+ 80485c3:	90                   	nop
+
+080485c4 <main>:
+#include <time.h>
+
+
+
+int main(void)
+{
+ 80485c4:	55                   	push   %ebp
+ 80485c5:	89 e5                	mov    %esp,%ebp
+ 80485c7:	83 e4 f0             	and    $0xfffffff0,%esp
+
+	init_screen();	
+ 80485ca:	e8 15 00 00 00       	call   80485e4 <init_screen>
+    //while(i < 10){
+        //print_circle(512, 360, i, BLACK);
+        //i++;
+        //}
+    
+      print_board(); 
+ 80485cf:	e8 38 05 00 00       	call   8048b0c <print_board>
+        usleep(500000);
+        restore(x, y);
+        printf("%d\n", i);
+    }
+*/
+    mouse_doing();
+ 80485d4:	e8 82 0a 00 00       	call   804905b <mouse_doing>
+  //  print_smile();
+
+    return 0; 
+ 80485d9:	b8 00 00 00 00       	mov    $0x0,%eax
+
+}
+ 80485de:	89 ec                	mov    %ebp,%esp
+ 80485e0:	5d                   	pop    %ebp
+ 80485e1:	c3                   	ret    
+ 80485e2:	90                   	nop
+ 80485e3:	90                   	nop
+
+080485e4 <init_screen>:
+char chess_board[BOARD_X*BOARD_Y];
+char current_player;
+char diff = 0;
+
+int init_screen(void)
+{
+ 80485e4:	55                   	push   %ebp
+ 80485e5:	89 e5                	mov    %esp,%ebp
+ 80485e7:	53                   	push   %ebx
+ 80485e8:	81 ec d4 00 00 00    	sub    $0xd4,%esp
+	int fd = 0;
+ 80485ee:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+	u32_t *p = NULL;
+ 80485f5:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+//	int i = 0;	
+   	struct fb_var_screeninfo fb_var_scr;
+
+	
+	/*open----fd : file descriptor*/
+	fd = open("/dev/fb0", O_RDWR);
+ 80485fc:	c7 44 24 04 02 00 00 	movl   $0x2,0x4(%esp)
+ 8048603:	00 
+ 8048604:	c7 04 24 90 97 04 08 	movl   $0x8049790,(%esp)
+ 804860b:	e8 28 fe ff ff       	call   8048438 <open@plt>
+ 8048610:	89 45 f4             	mov    %eax,-0xc(%ebp)
+	if(fd == -1){
+ 8048613:	83 7d f4 ff          	cmpl   $0xffffffff,-0xc(%ebp)
+ 8048617:	75 18                	jne    8048631 <init_screen+0x4d>
+		perror("open");
+ 8048619:	c7 04 24 99 97 04 08 	movl   $0x8049799,(%esp)
+ 8048620:	e8 73 fe ff ff       	call   8048498 <perror@plt>
+		exit(0);
+ 8048625:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 804862c:	e8 c7 fe ff ff       	call   80484f8 <exit@plt>
+	}
+	/*get the device info*/
+	if(ioctl(fd, FBIOGET_VSCREENINFO, &fb_var_scr) == -1){
+ 8048631:	8d 85 50 ff ff ff    	lea    -0xb0(%ebp),%eax
+ 8048637:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 804863b:	c7 44 24 04 00 46 00 	movl   $0x4600,0x4(%esp)
+ 8048642:	00 
+ 8048643:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048646:	89 04 24             	mov    %eax,(%esp)
+ 8048649:	e8 6a fe ff ff       	call   80484b8 <ioctl@plt>
+ 804864e:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 8048651:	75 18                	jne    804866b <init_screen+0x87>
+		perror("ioctl");
+ 8048653:	c7 04 24 9e 97 04 08 	movl   $0x804979e,(%esp)
+ 804865a:	e8 39 fe ff ff       	call   8048498 <perror@plt>
+		exit(0);
+ 804865f:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 8048666:	e8 8d fe ff ff       	call   80484f8 <exit@plt>
+	}
+	/*information detail, the struct info can be found in <liux/fb.h>*/
+	fb_v.w = fb_var_scr.xres;
+ 804866b:	8b 85 50 ff ff ff    	mov    -0xb0(%ebp),%eax
+ 8048671:	a3 c0 b8 04 08       	mov    %eax,0x804b8c0
+	fb_v.h = fb_var_scr.yres;
+ 8048676:	8b 85 54 ff ff ff    	mov    -0xac(%ebp),%eax
+ 804867c:	a3 c4 b8 04 08       	mov    %eax,0x804b8c4
+	fb_v.bpp = fb_var_scr.bits_per_pixel;
+ 8048681:	8b 85 68 ff ff ff    	mov    -0x98(%ebp),%eax
+ 8048687:	a3 c8 b8 04 08       	mov    %eax,0x804b8c8
+	
+	printf("x= %d\ty= %d\tbpp= %d\n", fb_v.w, fb_v.h, fb_v.bpp);
+ 804868c:	8b 1d c8 b8 04 08    	mov    0x804b8c8,%ebx
+ 8048692:	8b 0d c4 b8 04 08    	mov    0x804b8c4,%ecx
+ 8048698:	8b 15 c0 b8 04 08    	mov    0x804b8c0,%edx
+ 804869e:	b8 a4 97 04 08       	mov    $0x80497a4,%eax
+ 80486a3:	89 5c 24 0c          	mov    %ebx,0xc(%esp)
+ 80486a7:	89 4c 24 08          	mov    %ecx,0x8(%esp)
+ 80486ab:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 80486af:	89 04 24             	mov    %eax,(%esp)
+ 80486b2:	e8 11 fe ff ff       	call   80484c8 <printf@plt>
+	
+	/*mapping*/		
+	p =  mmap(NULL, fb_v.w*fb_v.h*fb_v.bpp/8, PROT_READ|PROT_WRITE, MAP_SHARED, fd,0);
+ 80486b7:	8b 15 c0 b8 04 08    	mov    0x804b8c0,%edx
+ 80486bd:	a1 c4 b8 04 08       	mov    0x804b8c4,%eax
+ 80486c2:	0f af d0             	imul   %eax,%edx
+ 80486c5:	a1 c8 b8 04 08       	mov    0x804b8c8,%eax
+ 80486ca:	0f af c2             	imul   %edx,%eax
+ 80486cd:	8d 50 07             	lea    0x7(%eax),%edx
+ 80486d0:	85 c0                	test   %eax,%eax
+ 80486d2:	0f 48 c2             	cmovs  %edx,%eax
+ 80486d5:	c1 f8 03             	sar    $0x3,%eax
+ 80486d8:	c7 44 24 14 00 00 00 	movl   $0x0,0x14(%esp)
+ 80486df:	00 
+ 80486e0:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 80486e3:	89 54 24 10          	mov    %edx,0x10(%esp)
+ 80486e7:	c7 44 24 0c 01 00 00 	movl   $0x1,0xc(%esp)
+ 80486ee:	00 
+ 80486ef:	c7 44 24 08 03 00 00 	movl   $0x3,0x8(%esp)
+ 80486f6:	00 
+ 80486f7:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 80486fb:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 8048702:	e8 41 fd ff ff       	call   8048448 <mmap@plt>
+ 8048707:	89 45 f0             	mov    %eax,-0x10(%ebp)
+	
+	if(p == MAP_FAILED){
+ 804870a:	83 7d f0 ff          	cmpl   $0xffffffff,-0x10(%ebp)
+ 804870e:	75 18                	jne    8048728 <init_screen+0x144>
+		perror("mmap");
+ 8048710:	c7 04 24 b9 97 04 08 	movl   $0x80497b9,(%esp)
+ 8048717:	e8 7c fd ff ff       	call   8048498 <perror@plt>
+		exit(0);
+ 804871c:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 8048723:	e8 d0 fd ff ff       	call   80484f8 <exit@plt>
+	}
+	
+	/*save p to struct*/
+	fb_v.memo = p;
+ 8048728:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 804872b:	a3 cc b8 04 08       	mov    %eax,0x804b8cc
+	/*close device file, include <unistd.h>*/
+	close(fd);
+ 8048730:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048733:	89 04 24             	mov    %eax,(%esp)
+ 8048736:	e8 9d fd ff ff       	call   80484d8 <close@plt>
+
+    current_color = WHITE;
+ 804873b:	c7 05 bc b8 04 08 ff 	movl   $0xffffff,0x804b8bc
+ 8048742:	ff ff 00 
+    current_player = 2;
+ 8048745:	c6 05 b8 b8 04 08 02 	movb   $0x2,0x804b8b8
+    diff = current_player;
+ 804874c:	0f b6 05 b8 b8 04 08 	movzbl 0x804b8b8,%eax
+ 8048753:	a2 28 b3 04 08       	mov    %al,0x804b328
+	/*refresh the screen*/
+	memset(p, 0x00, fb_v.w*fb_v.h*fb_v.bpp/8);	//get by char ,so /8;
+ 8048758:	8b 15 c0 b8 04 08    	mov    0x804b8c0,%edx
+ 804875e:	a1 c4 b8 04 08       	mov    0x804b8c4,%eax
+ 8048763:	0f af d0             	imul   %eax,%edx
+ 8048766:	a1 c8 b8 04 08       	mov    0x804b8c8,%eax
+ 804876b:	0f af c2             	imul   %edx,%eax
+ 804876e:	8d 50 07             	lea    0x7(%eax),%edx
+ 8048771:	85 c0                	test   %eax,%eax
+ 8048773:	0f 48 c2             	cmovs  %edx,%eax
+ 8048776:	c1 f8 03             	sar    $0x3,%eax
+ 8048779:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 804877d:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+ 8048784:	00 
+ 8048785:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048788:	89 04 24             	mov    %eax,(%esp)
+ 804878b:	e8 d8 fc ff ff       	call   8048468 <memset@plt>
+		*(p+(1024*(50+i))+404) = 0x00ffff00;
+		*(p+(1024*(50+i))+405) = 0x00ffff00;
+		*(p+(1024*(50+i))+406) = 0x00ffff00;
+		*(p+(1024*(50+i))+407) = 0x00ffff00;
+	}*/		
+	return 0;
+ 8048790:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048795:	81 c4 d4 00 00 00    	add    $0xd4,%esp
+ 804879b:	5b                   	pop    %ebx
+ 804879c:	5d                   	pop    %ebp
+ 804879d:	c3                   	ret    
+ 804879e:	90                   	nop
+ 804879f:	90                   	nop
+
+080487a0 <swap>:
+#include "common.h"
+
+extern fbscr_t fb_v;
+
+void swap(int *p, int *q)
+{
+ 80487a0:	55                   	push   %ebp
+ 80487a1:	89 e5                	mov    %esp,%ebp
+ 80487a3:	83 ec 10             	sub    $0x10,%esp
+    int tmp;
+
+    tmp = *q;
+ 80487a6:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80487a9:	8b 00                	mov    (%eax),%eax
+ 80487ab:	89 45 fc             	mov    %eax,-0x4(%ebp)
+    *q = *p;
+ 80487ae:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80487b1:	8b 10                	mov    (%eax),%edx
+ 80487b3:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80487b6:	89 10                	mov    %edx,(%eax)
+    *p = tmp;
+ 80487b8:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80487bb:	8b 55 fc             	mov    -0x4(%ebp),%edx
+ 80487be:	89 10                	mov    %edx,(%eax)
+}
+ 80487c0:	c9                   	leave  
+ 80487c1:	c3                   	ret    
+
+080487c2 <print_one_pixel>:
+
+int print_one_pixel(int x, int y, int color)
+{
+ 80487c2:	55                   	push   %ebp
+ 80487c3:	89 e5                	mov    %esp,%ebp
+    *((u32_t *)fb_v.memo+y*fb_v.w+x) = color;
+ 80487c5:	a1 cc b8 04 08       	mov    0x804b8cc,%eax
+ 80487ca:	89 c2                	mov    %eax,%edx
+ 80487cc:	a1 c0 b8 04 08       	mov    0x804b8c0,%eax
+ 80487d1:	0f af 45 0c          	imul   0xc(%ebp),%eax
+ 80487d5:	89 c1                	mov    %eax,%ecx
+ 80487d7:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80487da:	8d 04 01             	lea    (%ecx,%eax,1),%eax
+ 80487dd:	c1 e0 02             	shl    $0x2,%eax
+ 80487e0:	01 c2                	add    %eax,%edx
+ 80487e2:	8b 45 10             	mov    0x10(%ebp),%eax
+ 80487e5:	89 02                	mov    %eax,(%edx)
+
+    return 0;
+ 80487e7:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 80487ec:	5d                   	pop    %ebp
+ 80487ed:	c3                   	ret    
+
+080487ee <print_line>:
+
+int print_line(int x1, int y1, int x2, int y2, int color)
+{
+ 80487ee:	55                   	push   %ebp
+ 80487ef:	89 e5                	mov    %esp,%ebp
+ 80487f1:	83 ec 1c             	sub    $0x1c,%esp
+    int dx = x2 - x1;
+ 80487f4:	8b 55 10             	mov    0x10(%ebp),%edx
+ 80487f7:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80487fa:	89 d1                	mov    %edx,%ecx
+ 80487fc:	29 c1                	sub    %eax,%ecx
+ 80487fe:	89 c8                	mov    %ecx,%eax
+ 8048800:	89 45 fc             	mov    %eax,-0x4(%ebp)
+    int dy = y2 - y1;
+ 8048803:	8b 55 14             	mov    0x14(%ebp),%edx
+ 8048806:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8048809:	89 d1                	mov    %edx,%ecx
+ 804880b:	29 c1                	sub    %eax,%ecx
+ 804880d:	89 c8                	mov    %ecx,%eax
+ 804880f:	89 45 f8             	mov    %eax,-0x8(%ebp)
+    int p;
+    int inc = (dx*dy >0) ? 1 : -1;
+ 8048812:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 8048815:	0f af 45 f8          	imul   -0x8(%ebp),%eax
+ 8048819:	85 c0                	test   %eax,%eax
+ 804881b:	7e 07                	jle    8048824 <print_line+0x36>
+ 804881d:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8048822:	eb 05                	jmp    8048829 <print_line+0x3b>
+ 8048824:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 8048829:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    
+    if(abs(dx) > abs(dy)){
+ 804882c:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 804882f:	c1 f8 1f             	sar    $0x1f,%eax
+ 8048832:	89 c2                	mov    %eax,%edx
+ 8048834:	33 55 fc             	xor    -0x4(%ebp),%edx
+ 8048837:	29 c2                	sub    %eax,%edx
+ 8048839:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 804883c:	89 c1                	mov    %eax,%ecx
+ 804883e:	c1 f9 1f             	sar    $0x1f,%ecx
+ 8048841:	89 c8                	mov    %ecx,%eax
+ 8048843:	33 45 f8             	xor    -0x8(%ebp),%eax
+ 8048846:	29 c8                	sub    %ecx,%eax
+ 8048848:	39 c2                	cmp    %eax,%edx
+ 804884a:	0f 8e a4 00 00 00    	jle    80488f4 <print_line+0x106>
+        if(dx < 0){
+ 8048850:	83 7d fc 00          	cmpl   $0x0,-0x4(%ebp)
+ 8048854:	79 2a                	jns    8048880 <print_line+0x92>
+            swap(&x1, &x2);
+ 8048856:	8d 45 10             	lea    0x10(%ebp),%eax
+ 8048859:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 804885d:	8d 45 08             	lea    0x8(%ebp),%eax
+ 8048860:	89 04 24             	mov    %eax,(%esp)
+ 8048863:	e8 38 ff ff ff       	call   80487a0 <swap>
+            swap(&y1, &y2);
+ 8048868:	8d 45 14             	lea    0x14(%ebp),%eax
+ 804886b:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 804886f:	8d 45 0c             	lea    0xc(%ebp),%eax
+ 8048872:	89 04 24             	mov    %eax,(%esp)
+ 8048875:	e8 26 ff ff ff       	call   80487a0 <swap>
+            dx = -dx;
+ 804887a:	f7 5d fc             	negl   -0x4(%ebp)
+            dy = -dy;
+ 804887d:	f7 5d f8             	negl   -0x8(%ebp)
+        }
+        dy = abs(dy);
+ 8048880:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 8048883:	c1 f8 1f             	sar    $0x1f,%eax
+ 8048886:	31 45 f8             	xor    %eax,-0x8(%ebp)
+ 8048889:	29 45 f8             	sub    %eax,-0x8(%ebp)
+        p = 2*dy - dx;
+ 804888c:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 804888f:	01 c0                	add    %eax,%eax
+ 8048891:	2b 45 fc             	sub    -0x4(%ebp),%eax
+ 8048894:	89 45 f4             	mov    %eax,-0xc(%ebp)
+
+        while(x1 <= x2){
+ 8048897:	eb 4c                	jmp    80488e5 <print_line+0xf7>
+            print_one_pixel(x1, y1, color);
+ 8048899:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 804889c:	8b 45 08             	mov    0x8(%ebp),%eax
+ 804889f:	8b 4d 18             	mov    0x18(%ebp),%ecx
+ 80488a2:	89 4c 24 08          	mov    %ecx,0x8(%esp)
+ 80488a6:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 80488aa:	89 04 24             	mov    %eax,(%esp)
+ 80488ad:	e8 10 ff ff ff       	call   80487c2 <print_one_pixel>
+            x1++;
+ 80488b2:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80488b5:	83 c0 01             	add    $0x1,%eax
+ 80488b8:	89 45 08             	mov    %eax,0x8(%ebp)
+        
+        if(p < 0){
+ 80488bb:	83 7d f4 00          	cmpl   $0x0,-0xc(%ebp)
+ 80488bf:	79 0a                	jns    80488cb <print_line+0xdd>
+            p += 2*dy;
+ 80488c1:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 80488c4:	01 c0                	add    %eax,%eax
+ 80488c6:	01 45 f4             	add    %eax,-0xc(%ebp)
+ 80488c9:	eb 1a                	jmp    80488e5 <print_line+0xf7>
+        }else{
+                y1 += inc;
+ 80488cb:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80488ce:	03 45 f0             	add    -0x10(%ebp),%eax
+ 80488d1:	89 45 0c             	mov    %eax,0xc(%ebp)
+                p += 2*(dy-dx);
+ 80488d4:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 80488d7:	8b 55 f8             	mov    -0x8(%ebp),%edx
+ 80488da:	89 d1                	mov    %edx,%ecx
+ 80488dc:	29 c1                	sub    %eax,%ecx
+ 80488de:	89 c8                	mov    %ecx,%eax
+ 80488e0:	01 c0                	add    %eax,%eax
+ 80488e2:	01 45 f4             	add    %eax,-0xc(%ebp)
+            dy = -dy;
+        }
+        dy = abs(dy);
+        p = 2*dy - dx;
+
+        while(x1 <= x2){
+ 80488e5:	8b 55 08             	mov    0x8(%ebp),%edx
+ 80488e8:	8b 45 10             	mov    0x10(%ebp),%eax
+ 80488eb:	39 c2                	cmp    %eax,%edx
+ 80488ed:	7e aa                	jle    8048899 <print_line+0xab>
+ 80488ef:	e9 9f 00 00 00       	jmp    8048993 <print_line+0x1a5>
+                y1 += inc;
+                p += 2*(dy-dx);
+            }
+        }
+    }else{
+        if(dy < 0){
+ 80488f4:	83 7d f8 00          	cmpl   $0x0,-0x8(%ebp)
+ 80488f8:	79 2a                	jns    8048924 <print_line+0x136>
+            swap(&x1, &x2);
+ 80488fa:	8d 45 10             	lea    0x10(%ebp),%eax
+ 80488fd:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8048901:	8d 45 08             	lea    0x8(%ebp),%eax
+ 8048904:	89 04 24             	mov    %eax,(%esp)
+ 8048907:	e8 94 fe ff ff       	call   80487a0 <swap>
+            swap(&y1, &y2);
+ 804890c:	8d 45 14             	lea    0x14(%ebp),%eax
+ 804890f:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8048913:	8d 45 0c             	lea    0xc(%ebp),%eax
+ 8048916:	89 04 24             	mov    %eax,(%esp)
+ 8048919:	e8 82 fe ff ff       	call   80487a0 <swap>
+            dx = -dx;
+ 804891e:	f7 5d fc             	negl   -0x4(%ebp)
+            dy = -dy;
+ 8048921:	f7 5d f8             	negl   -0x8(%ebp)
+        }
+        dx = abs(dx);
+ 8048924:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 8048927:	c1 f8 1f             	sar    $0x1f,%eax
+ 804892a:	31 45 fc             	xor    %eax,-0x4(%ebp)
+ 804892d:	29 45 fc             	sub    %eax,-0x4(%ebp)
+        p = 2*dx - dy;
+ 8048930:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 8048933:	01 c0                	add    %eax,%eax
+ 8048935:	2b 45 f8             	sub    -0x8(%ebp),%eax
+ 8048938:	89 45 f4             	mov    %eax,-0xc(%ebp)
+
+        while(y1 <= y2){
+ 804893b:	eb 4c                	jmp    8048989 <print_line+0x19b>
+            print_one_pixel(x1, y1, color);
+ 804893d:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048940:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048943:	8b 4d 18             	mov    0x18(%ebp),%ecx
+ 8048946:	89 4c 24 08          	mov    %ecx,0x8(%esp)
+ 804894a:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 804894e:	89 04 24             	mov    %eax,(%esp)
+ 8048951:	e8 6c fe ff ff       	call   80487c2 <print_one_pixel>
+            y1++;
+ 8048956:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8048959:	83 c0 01             	add    $0x1,%eax
+ 804895c:	89 45 0c             	mov    %eax,0xc(%ebp)
+        
+        if(p < 0){
+ 804895f:	83 7d f4 00          	cmpl   $0x0,-0xc(%ebp)
+ 8048963:	79 0a                	jns    804896f <print_line+0x181>
+            p += 2*dx;
+ 8048965:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 8048968:	01 c0                	add    %eax,%eax
+ 804896a:	01 45 f4             	add    %eax,-0xc(%ebp)
+ 804896d:	eb 1a                	jmp    8048989 <print_line+0x19b>
+        }else{
+                x1 += inc;
+ 804896f:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048972:	03 45 f0             	add    -0x10(%ebp),%eax
+ 8048975:	89 45 08             	mov    %eax,0x8(%ebp)
+                p += 2*(dx-dy);
+ 8048978:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 804897b:	8b 55 fc             	mov    -0x4(%ebp),%edx
+ 804897e:	89 d1                	mov    %edx,%ecx
+ 8048980:	29 c1                	sub    %eax,%ecx
+ 8048982:	89 c8                	mov    %ecx,%eax
+ 8048984:	01 c0                	add    %eax,%eax
+ 8048986:	01 45 f4             	add    %eax,-0xc(%ebp)
+            dy = -dy;
+        }
+        dx = abs(dx);
+        p = 2*dx - dy;
+
+        while(y1 <= y2){
+ 8048989:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 804898c:	8b 45 14             	mov    0x14(%ebp),%eax
+ 804898f:	39 c2                	cmp    %eax,%edx
+ 8048991:	7e aa                	jle    804893d <print_line+0x14f>
+                p += 2*(dx-dy);
+            }
+        }
+    
+     }
+    return 0;
+ 8048993:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048998:	c9                   	leave  
+ 8048999:	c3                   	ret    
+
+0804899a <print_circle>:
+
+int print_circle(int x0, int y0, int r, int color)
+{
+ 804899a:	55                   	push   %ebp
+ 804899b:	89 e5                	mov    %esp,%ebp
+ 804899d:	56                   	push   %esi
+ 804899e:	53                   	push   %ebx
+ 804899f:	83 ec 24             	sub    $0x24,%esp
+    int x = 0;
+ 80489a2:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+    int y = r;
+ 80489a9:	8b 45 10             	mov    0x10(%ebp),%eax
+ 80489ac:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    int p = 3 - 2 * r;
+ 80489af:	8b 55 10             	mov    0x10(%ebp),%edx
+ 80489b2:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80489b7:	29 d0                	sub    %edx,%eax
+ 80489b9:	01 c0                	add    %eax,%eax
+ 80489bb:	83 c0 03             	add    $0x3,%eax
+ 80489be:	89 45 ec             	mov    %eax,-0x14(%ebp)
+
+    while(x <= y){
+ 80489c1:	e9 2d 01 00 00       	jmp    8048af3 <print_circle+0x159>
+        print_one_pixel(x0-y, y0+x, color);
+        
+        print_one_pixel(x0-y, y0-x, color);
+        print_one_pixel(x0-x, y0-y, color);
+#endif 
+        print_line(x0-x, y0+y, x0+x, y0+y, color);
+ 80489c6:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 80489c9:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 80489cc:	8d 34 02             	lea    (%edx,%eax,1),%esi
+ 80489cf:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 80489d2:	8b 55 08             	mov    0x8(%ebp),%edx
+ 80489d5:	8d 1c 02             	lea    (%edx,%eax,1),%ebx
+ 80489d8:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 80489db:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 80489de:	8d 0c 02             	lea    (%edx,%eax,1),%ecx
+ 80489e1:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 80489e4:	8b 55 08             	mov    0x8(%ebp),%edx
+ 80489e7:	29 c2                	sub    %eax,%edx
+ 80489e9:	8b 45 14             	mov    0x14(%ebp),%eax
+ 80489ec:	89 44 24 10          	mov    %eax,0x10(%esp)
+ 80489f0:	89 74 24 0c          	mov    %esi,0xc(%esp)
+ 80489f4:	89 5c 24 08          	mov    %ebx,0x8(%esp)
+ 80489f8:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 80489fc:	89 14 24             	mov    %edx,(%esp)
+ 80489ff:	e8 ea fd ff ff       	call   80487ee <print_line>
+        print_line(x0-y, y0+x, x0+y, y0+x, color);
+ 8048a04:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048a07:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048a0a:	8d 34 02             	lea    (%edx,%eax,1),%esi
+ 8048a0d:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048a10:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048a13:	8d 1c 02             	lea    (%edx,%eax,1),%ebx
+ 8048a16:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048a19:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048a1c:	8d 0c 02             	lea    (%edx,%eax,1),%ecx
+ 8048a1f:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048a22:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048a25:	29 c2                	sub    %eax,%edx
+ 8048a27:	8b 45 14             	mov    0x14(%ebp),%eax
+ 8048a2a:	89 44 24 10          	mov    %eax,0x10(%esp)
+ 8048a2e:	89 74 24 0c          	mov    %esi,0xc(%esp)
+ 8048a32:	89 5c 24 08          	mov    %ebx,0x8(%esp)
+ 8048a36:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048a3a:	89 14 24             	mov    %edx,(%esp)
+ 8048a3d:	e8 ac fd ff ff       	call   80487ee <print_line>
+        
+        print_line(x0-x, y0-y, x0+x, y0-y, color);
+ 8048a42:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048a45:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048a48:	89 d6                	mov    %edx,%esi
+ 8048a4a:	29 c6                	sub    %eax,%esi
+ 8048a4c:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048a4f:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048a52:	8d 1c 02             	lea    (%edx,%eax,1),%ebx
+ 8048a55:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048a58:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048a5b:	89 d1                	mov    %edx,%ecx
+ 8048a5d:	29 c1                	sub    %eax,%ecx
+ 8048a5f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048a62:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048a65:	29 c2                	sub    %eax,%edx
+ 8048a67:	8b 45 14             	mov    0x14(%ebp),%eax
+ 8048a6a:	89 44 24 10          	mov    %eax,0x10(%esp)
+ 8048a6e:	89 74 24 0c          	mov    %esi,0xc(%esp)
+ 8048a72:	89 5c 24 08          	mov    %ebx,0x8(%esp)
+ 8048a76:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048a7a:	89 14 24             	mov    %edx,(%esp)
+ 8048a7d:	e8 6c fd ff ff       	call   80487ee <print_line>
+        print_line(x0-y, y0-x, x0+y, y0-x, color);
+ 8048a82:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048a85:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048a88:	89 d6                	mov    %edx,%esi
+ 8048a8a:	29 c6                	sub    %eax,%esi
+ 8048a8c:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048a8f:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048a92:	8d 1c 02             	lea    (%edx,%eax,1),%ebx
+ 8048a95:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048a98:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048a9b:	89 d1                	mov    %edx,%ecx
+ 8048a9d:	29 c1                	sub    %eax,%ecx
+ 8048a9f:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048aa2:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048aa5:	29 c2                	sub    %eax,%edx
+ 8048aa7:	8b 45 14             	mov    0x14(%ebp),%eax
+ 8048aaa:	89 44 24 10          	mov    %eax,0x10(%esp)
+ 8048aae:	89 74 24 0c          	mov    %esi,0xc(%esp)
+ 8048ab2:	89 5c 24 08          	mov    %ebx,0x8(%esp)
+ 8048ab6:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048aba:	89 14 24             	mov    %edx,(%esp)
+ 8048abd:	e8 2c fd ff ff       	call   80487ee <print_line>
+
+
+        if(p < 0){
+ 8048ac2:	83 7d ec 00          	cmpl   $0x0,-0x14(%ebp)
+ 8048ac6:	79 0e                	jns    8048ad6 <print_circle+0x13c>
+            p += 4 * x + 6;
+ 8048ac8:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048acb:	c1 e0 02             	shl    $0x2,%eax
+ 8048ace:	83 c0 06             	add    $0x6,%eax
+ 8048ad1:	01 45 ec             	add    %eax,-0x14(%ebp)
+ 8048ad4:	eb 19                	jmp    8048aef <print_circle+0x155>
+        }else{
+            p += 4 * (x-y) + 10;
+ 8048ad6:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048ad9:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 8048adc:	89 d1                	mov    %edx,%ecx
+ 8048ade:	29 c1                	sub    %eax,%ecx
+ 8048ae0:	89 c8                	mov    %ecx,%eax
+ 8048ae2:	c1 e0 02             	shl    $0x2,%eax
+ 8048ae5:	83 c0 0a             	add    $0xa,%eax
+ 8048ae8:	01 45 ec             	add    %eax,-0x14(%ebp)
+            y--;
+ 8048aeb:	83 6d f0 01          	subl   $0x1,-0x10(%ebp)
+         }
+         x++;
+ 8048aef:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+{
+    int x = 0;
+    int y = r;
+    int p = 3 - 2 * r;
+
+    while(x <= y){
+ 8048af3:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048af6:	3b 45 f0             	cmp    -0x10(%ebp),%eax
+ 8048af9:	0f 8e c7 fe ff ff    	jle    80489c6 <print_circle+0x2c>
+            p += 4 * (x-y) + 10;
+            y--;
+         }
+         x++;
+    }
+    return 0;
+ 8048aff:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048b04:	83 c4 24             	add    $0x24,%esp
+ 8048b07:	5b                   	pop    %ebx
+ 8048b08:	5e                   	pop    %esi
+ 8048b09:	5d                   	pop    %ebp
+ 8048b0a:	c3                   	ret    
+ 8048b0b:	90                   	nop
+
+08048b0c <print_board>:
+#include <stdio.h>
+#include "common.h"
+
+int print_board(void)
+{
+ 8048b0c:	55                   	push   %ebp
+ 8048b0d:	89 e5                	mov    %esp,%ebp
+ 8048b0f:	83 ec 38             	sub    $0x38,%esp
+    int i = 0, j = 0;
+ 8048b12:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 8048b19:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+    /*backgroud*/
+    for(i = 0; i < SPACE*BOARD_Y+70; i++){
+ 8048b20:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 8048b27:	eb 34                	jmp    8048b5d <print_board+0x51>
+        for(j = 20; j < SPACE*BOARD_X+500; j++){
+ 8048b29:	c7 45 f0 14 00 00 00 	movl   $0x14,-0x10(%ebp)
+ 8048b30:	eb 1e                	jmp    8048b50 <print_board+0x44>
+            print_one_pixel(j, i, DARK_YELLOW);
+ 8048b32:	c7 44 24 08 22 b4 ee 	movl   $0xeeb422,0x8(%esp)
+ 8048b39:	00 
+ 8048b3a:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048b3d:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8048b41:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048b44:	89 04 24             	mov    %eax,(%esp)
+ 8048b47:	e8 76 fc ff ff       	call   80487c2 <print_one_pixel>
+int print_board(void)
+{
+    int i = 0, j = 0;
+    /*backgroud*/
+    for(i = 0; i < SPACE*BOARD_Y+70; i++){
+        for(j = 20; j < SPACE*BOARD_X+500; j++){
+ 8048b4c:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 8048b50:	81 7d f0 59 05 00 00 	cmpl   $0x559,-0x10(%ebp)
+ 8048b57:	7e d9                	jle    8048b32 <print_board+0x26>
+
+int print_board(void)
+{
+    int i = 0, j = 0;
+    /*backgroud*/
+    for(i = 0; i < SPACE*BOARD_Y+70; i++){
+ 8048b59:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 8048b5d:	81 7d f4 15 03 00 00 	cmpl   $0x315,-0xc(%ebp)
+ 8048b64:	7e c3                	jle    8048b29 <print_board+0x1d>
+            print_one_pixel(j, i, DARK_YELLOW);
+
+        }
+    }
+    /*line*/
+    for(i = ST_Y; i < ST_Y+SPACE*BOARD_Y; i += SPACE){
+ 8048b66:	c7 45 f4 28 00 00 00 	movl   $0x28,-0xc(%ebp)
+ 8048b6d:	eb 2e                	jmp    8048b9d <print_board+0x91>
+        print_line(ST_X, i, ST_X+(BOARD_X-1)*SPACE, i, 0x00ffffff);
+ 8048b6f:	c7 44 24 10 ff ff ff 	movl   $0xffffff,0x10(%esp)
+ 8048b76:	00 
+ 8048b77:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048b7a:	89 44 24 0c          	mov    %eax,0xc(%esp)
+ 8048b7e:	c7 44 24 08 10 04 00 	movl   $0x410,0x8(%esp)
+ 8048b85:	00 
+ 8048b86:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048b89:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8048b8d:	c7 04 24 c8 00 00 00 	movl   $0xc8,(%esp)
+ 8048b94:	e8 55 fc ff ff       	call   80487ee <print_line>
+            print_one_pixel(j, i, DARK_YELLOW);
+
+        }
+    }
+    /*line*/
+    for(i = ST_Y; i < ST_Y+SPACE*BOARD_Y; i += SPACE){
+ 8048b99:	83 45 f4 1e          	addl   $0x1e,-0xc(%ebp)
+ 8048b9d:	81 7d f4 f7 02 00 00 	cmpl   $0x2f7,-0xc(%ebp)
+ 8048ba4:	7e c9                	jle    8048b6f <print_board+0x63>
+        print_line(ST_X, i, ST_X+(BOARD_X-1)*SPACE, i, 0x00ffffff);
+    }
+    /*row*/
+    for(j = ST_X; j < ST_X+BOARD_X*SPACE; j += SPACE){
+ 8048ba6:	c7 45 f0 c8 00 00 00 	movl   $0xc8,-0x10(%ebp)
+ 8048bad:	eb 2e                	jmp    8048bdd <print_board+0xd1>
+        print_line(j, ST_Y, j, ST_Y+(BOARD_Y-1)*SPACE, 0x00ffffff); 
+ 8048baf:	c7 44 24 10 ff ff ff 	movl   $0xffffff,0x10(%esp)
+ 8048bb6:	00 
+ 8048bb7:	c7 44 24 0c da 02 00 	movl   $0x2da,0xc(%esp)
+ 8048bbe:	00 
+ 8048bbf:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048bc2:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8048bc6:	c7 44 24 04 28 00 00 	movl   $0x28,0x4(%esp)
+ 8048bcd:	00 
+ 8048bce:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048bd1:	89 04 24             	mov    %eax,(%esp)
+ 8048bd4:	e8 15 fc ff ff       	call   80487ee <print_line>
+    /*line*/
+    for(i = ST_Y; i < ST_Y+SPACE*BOARD_Y; i += SPACE){
+        print_line(ST_X, i, ST_X+(BOARD_X-1)*SPACE, i, 0x00ffffff);
+    }
+    /*row*/
+    for(j = ST_X; j < ST_X+BOARD_X*SPACE; j += SPACE){
+ 8048bd9:	83 45 f0 1e          	addl   $0x1e,-0x10(%ebp)
+ 8048bdd:	81 7d f0 2d 04 00 00 	cmpl   $0x42d,-0x10(%ebp)
+ 8048be4:	7e c9                	jle    8048baf <print_board+0xa3>
+        print_line(j, ST_Y, j, ST_Y+(BOARD_Y-1)*SPACE, 0x00ffffff); 
+    }
+    
+    print_circle(50, 100, 25, WHITE);
+ 8048be6:	c7 44 24 0c ff ff ff 	movl   $0xffffff,0xc(%esp)
+ 8048bed:	00 
+ 8048bee:	c7 44 24 08 19 00 00 	movl   $0x19,0x8(%esp)
+ 8048bf5:	00 
+ 8048bf6:	c7 44 24 04 64 00 00 	movl   $0x64,0x4(%esp)
+ 8048bfd:	00 
+ 8048bfe:	c7 04 24 32 00 00 00 	movl   $0x32,(%esp)
+ 8048c05:	e8 90 fd ff ff       	call   804899a <print_circle>
+    print_circle(50, 200, 25, BLACK);
+ 8048c0a:	c7 44 24 0c 00 00 00 	movl   $0x0,0xc(%esp)
+ 8048c11:	00 
+ 8048c12:	c7 44 24 08 19 00 00 	movl   $0x19,0x8(%esp)
+ 8048c19:	00 
+ 8048c1a:	c7 44 24 04 c8 00 00 	movl   $0xc8,0x4(%esp)
+ 8048c21:	00 
+ 8048c22:	c7 04 24 32 00 00 00 	movl   $0x32,(%esp)
+ 8048c29:	e8 6c fd ff ff       	call   804899a <print_circle>
+    
+    return 0;
+ 8048c2e:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048c33:	c9                   	leave  
+ 8048c34:	c3                   	ret    
+
+08048c35 <print_half_cirle>:
+
+int print_half_cirle(int x0, int y0, int r, int color)
+{
+ 8048c35:	55                   	push   %ebp
+ 8048c36:	89 e5                	mov    %esp,%ebp
+ 8048c38:	83 ec 28             	sub    $0x28,%esp
+    int x = 0;
+ 8048c3b:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+    int y = r;
+ 8048c42:	8b 45 10             	mov    0x10(%ebp),%eax
+ 8048c45:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    int p = 3 - 2 * r;
+ 8048c48:	8b 55 10             	mov    0x10(%ebp),%edx
+ 8048c4b:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8048c50:	29 d0                	sub    %edx,%eax
+ 8048c52:	01 c0                	add    %eax,%eax
+ 8048c54:	83 c0 03             	add    $0x3,%eax
+ 8048c57:	89 45 ec             	mov    %eax,-0x14(%ebp)
+
+    while(x <= y){
+ 8048c5a:	e9 c1 00 00 00       	jmp    8048d20 <print_half_cirle+0xeb>
+   
+        // 1/4 cirle-right_down
+        print_one_pixel(x0+x, y0+y, color);
+ 8048c5f:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048c62:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048c65:	8d 0c 02             	lea    (%edx,%eax,1),%ecx
+ 8048c68:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048c6b:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048c6e:	01 c2                	add    %eax,%edx
+ 8048c70:	8b 45 14             	mov    0x14(%ebp),%eax
+ 8048c73:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8048c77:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048c7b:	89 14 24             	mov    %edx,(%esp)
+ 8048c7e:	e8 3f fb ff ff       	call   80487c2 <print_one_pixel>
+        print_one_pixel(x0+y, y0+x, color);
+ 8048c83:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048c86:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048c89:	8d 0c 02             	lea    (%edx,%eax,1),%ecx
+ 8048c8c:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048c8f:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048c92:	01 c2                	add    %eax,%edx
+ 8048c94:	8b 45 14             	mov    0x14(%ebp),%eax
+ 8048c97:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8048c9b:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048c9f:	89 14 24             	mov    %edx,(%esp)
+ 8048ca2:	e8 1b fb ff ff       	call   80487c2 <print_one_pixel>
+
+        print_one_pixel(x0-x, y0+y, color);
+ 8048ca7:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048caa:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048cad:	8d 0c 02             	lea    (%edx,%eax,1),%ecx
+ 8048cb0:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048cb3:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048cb6:	29 c2                	sub    %eax,%edx
+ 8048cb8:	8b 45 14             	mov    0x14(%ebp),%eax
+ 8048cbb:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8048cbf:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048cc3:	89 14 24             	mov    %edx,(%esp)
+ 8048cc6:	e8 f7 fa ff ff       	call   80487c2 <print_one_pixel>
+        print_one_pixel(x0-y, y0+x, color);
+ 8048ccb:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048cce:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048cd1:	8d 0c 02             	lea    (%edx,%eax,1),%ecx
+ 8048cd4:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048cd7:	8b 55 08             	mov    0x8(%ebp),%edx
+ 8048cda:	29 c2                	sub    %eax,%edx
+ 8048cdc:	8b 45 14             	mov    0x14(%ebp),%eax
+ 8048cdf:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8048ce3:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048ce7:	89 14 24             	mov    %edx,(%esp)
+ 8048cea:	e8 d3 fa ff ff       	call   80487c2 <print_one_pixel>
+        
+        
+        if(p < 0){
+ 8048cef:	83 7d ec 00          	cmpl   $0x0,-0x14(%ebp)
+ 8048cf3:	79 0e                	jns    8048d03 <print_half_cirle+0xce>
+            p += 4 * x + 6;
+ 8048cf5:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048cf8:	c1 e0 02             	shl    $0x2,%eax
+ 8048cfb:	83 c0 06             	add    $0x6,%eax
+ 8048cfe:	01 45 ec             	add    %eax,-0x14(%ebp)
+ 8048d01:	eb 19                	jmp    8048d1c <print_half_cirle+0xe7>
+        }else{
+            p += 4 * (x-y) + 10;
+ 8048d03:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8048d06:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 8048d09:	89 d1                	mov    %edx,%ecx
+ 8048d0b:	29 c1                	sub    %eax,%ecx
+ 8048d0d:	89 c8                	mov    %ecx,%eax
+ 8048d0f:	c1 e0 02             	shl    $0x2,%eax
+ 8048d12:	83 c0 0a             	add    $0xa,%eax
+ 8048d15:	01 45 ec             	add    %eax,-0x14(%ebp)
+            y--;
+ 8048d18:	83 6d f0 01          	subl   $0x1,-0x10(%ebp)
+         }
+         x++;
+ 8048d1c:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+{
+    int x = 0;
+    int y = r;
+    int p = 3 - 2 * r;
+
+    while(x <= y){
+ 8048d20:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048d23:	3b 45 f0             	cmp    -0x10(%ebp),%eax
+ 8048d26:	0f 8e 33 ff ff ff    	jle    8048c5f <print_half_cirle+0x2a>
+            p += 4 * (x-y) + 10;
+            y--;
+         }
+         x++;
+    }
+    return 0;
+ 8048d2c:	b8 00 00 00 00       	mov    $0x0,%eax
+
+
+}
+ 8048d31:	c9                   	leave  
+ 8048d32:	c3                   	ret    
+
+08048d33 <print_smile>:
+
+int print_smile(void)
+{
+ 8048d33:	55                   	push   %ebp
+ 8048d34:	89 e5                	mov    %esp,%ebp
+ 8048d36:	83 ec 18             	sub    $0x18,%esp
+    print_circle(50 , 600, 25, BLUE); //0x00ff8c00);
+ 8048d39:	c7 44 24 0c ff 00 00 	movl   $0xff,0xc(%esp)
+ 8048d40:	00 
+ 8048d41:	c7 44 24 08 19 00 00 	movl   $0x19,0x8(%esp)
+ 8048d48:	00 
+ 8048d49:	c7 44 24 04 58 02 00 	movl   $0x258,0x4(%esp)
+ 8048d50:	00 
+ 8048d51:	c7 04 24 32 00 00 00 	movl   $0x32,(%esp)
+ 8048d58:	e8 3d fc ff ff       	call   804899a <print_circle>
+    
+    print_circle(40, 590, 5, 0x00ffff00);
+ 8048d5d:	c7 44 24 0c 00 ff ff 	movl   $0xffff00,0xc(%esp)
+ 8048d64:	00 
+ 8048d65:	c7 44 24 08 05 00 00 	movl   $0x5,0x8(%esp)
+ 8048d6c:	00 
+ 8048d6d:	c7 44 24 04 4e 02 00 	movl   $0x24e,0x4(%esp)
+ 8048d74:	00 
+ 8048d75:	c7 04 24 28 00 00 00 	movl   $0x28,(%esp)
+ 8048d7c:	e8 19 fc ff ff       	call   804899a <print_circle>
+    print_circle(60, 590, 5, 0x00ffff00);
+ 8048d81:	c7 44 24 0c 00 ff ff 	movl   $0xffff00,0xc(%esp)
+ 8048d88:	00 
+ 8048d89:	c7 44 24 08 05 00 00 	movl   $0x5,0x8(%esp)
+ 8048d90:	00 
+ 8048d91:	c7 44 24 04 4e 02 00 	movl   $0x24e,0x4(%esp)
+ 8048d98:	00 
+ 8048d99:	c7 04 24 3c 00 00 00 	movl   $0x3c,(%esp)
+ 8048da0:	e8 f5 fb ff ff       	call   804899a <print_circle>
+
+    print_half_cirle(50, 610, 10, RED);    
+ 8048da5:	c7 44 24 0c 00 00 ff 	movl   $0xff0000,0xc(%esp)
+ 8048dac:	00 
+ 8048dad:	c7 44 24 08 0a 00 00 	movl   $0xa,0x8(%esp)
+ 8048db4:	00 
+ 8048db5:	c7 44 24 04 62 02 00 	movl   $0x262,0x4(%esp)
+ 8048dbc:	00 
+ 8048dbd:	c7 04 24 32 00 00 00 	movl   $0x32,(%esp)
+ 8048dc4:	e8 6c fe ff ff       	call   8048c35 <print_half_cirle>
+
+    return 0;
+ 8048dc9:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048dce:	c9                   	leave  
+ 8048dcf:	c3                   	ret    
+
+08048dd0 <save_shape>:
+}  ; 
+
+static int shape_save[C_H*C_W];
+
+int save_shape(int x, int y)
+{   
+ 8048dd0:	55                   	push   %ebp
+ 8048dd1:	89 e5                	mov    %esp,%ebp
+ 8048dd3:	56                   	push   %esi
+ 8048dd4:	53                   	push   %ebx
+ 8048dd5:	83 ec 10             	sub    $0x10,%esp
+    int i, j;
+    
+    for (i = 0; i < C_H; i++){
+ 8048dd8:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 8048ddf:	eb 57                	jmp    8048e38 <save_shape+0x68>
+        for(j = 0; j < C_W; j++){
+ 8048de1:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 8048de8:	eb 44                	jmp    8048e2e <save_shape+0x5e>
+            shape_save[i*C_W+j] = *((u32_t *)fb_v.memo + x +j + (y+i)*fb_v.w);
+ 8048dea:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 8048ded:	89 d0                	mov    %edx,%eax
+ 8048def:	c1 e0 02             	shl    $0x2,%eax
+ 8048df2:	01 d0                	add    %edx,%eax
+ 8048df4:	01 c0                	add    %eax,%eax
+ 8048df6:	03 45 f0             	add    -0x10(%ebp),%eax
+ 8048df9:	8b 15 cc b8 04 08    	mov    0x804b8cc,%edx
+ 8048dff:	8b 5d 08             	mov    0x8(%ebp),%ebx
+ 8048e02:	8b 4d f0             	mov    -0x10(%ebp),%ecx
+ 8048e05:	8d 34 0b             	lea    (%ebx,%ecx,1),%esi
+ 8048e08:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+ 8048e0b:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+ 8048e0e:	01 cb                	add    %ecx,%ebx
+ 8048e10:	8b 0d c0 b8 04 08    	mov    0x804b8c0,%ecx
+ 8048e16:	0f af cb             	imul   %ebx,%ecx
+ 8048e19:	8d 0c 0e             	lea    (%esi,%ecx,1),%ecx
+ 8048e1c:	c1 e1 02             	shl    $0x2,%ecx
+ 8048e1f:	01 ca                	add    %ecx,%edx
+ 8048e21:	8b 12                	mov    (%edx),%edx
+ 8048e23:	89 14 85 40 b3 04 08 	mov    %edx,0x804b340(,%eax,4)
+int save_shape(int x, int y)
+{   
+    int i, j;
+    
+    for (i = 0; i < C_H; i++){
+        for(j = 0; j < C_W; j++){
+ 8048e2a:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 8048e2e:	83 7d f0 09          	cmpl   $0x9,-0x10(%ebp)
+ 8048e32:	7e b6                	jle    8048dea <save_shape+0x1a>
+
+int save_shape(int x, int y)
+{   
+    int i, j;
+    
+    for (i = 0; i < C_H; i++){
+ 8048e34:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 8048e38:	83 7d f4 10          	cmpl   $0x10,-0xc(%ebp)
+ 8048e3c:	7e a3                	jle    8048de1 <save_shape+0x11>
+            shape_save[i*C_W+j] = *((u32_t *)fb_v.memo + x +j + (y+i)*fb_v.w);
+        }
+    }
+    
+
+    return 0;
+ 8048e3e:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048e43:	83 c4 10             	add    $0x10,%esp
+ 8048e46:	5b                   	pop    %ebx
+ 8048e47:	5e                   	pop    %esi
+ 8048e48:	5d                   	pop    %ebp
+ 8048e49:	c3                   	ret    
+
+08048e4a <restore>:
+
+int restore(int x, int y)
+{
+ 8048e4a:	55                   	push   %ebp
+ 8048e4b:	89 e5                	mov    %esp,%ebp
+ 8048e4d:	53                   	push   %ebx
+ 8048e4e:	83 ec 24             	sub    $0x24,%esp
+    int i = 0;
+ 8048e51:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+    int j = 0;
+ 8048e58:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+    
+    for(i = 0; i < C_H; i++){
+ 8048e5f:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 8048e66:	eb 4e                	jmp    8048eb6 <restore+0x6c>
+        for(j = 0; j < C_W; j++){
+ 8048e68:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 8048e6f:	eb 3b                	jmp    8048eac <restore+0x62>
+            print_one_pixel(x+j, y+i, shape_save[j+i*C_W]);
+ 8048e71:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 8048e74:	89 d0                	mov    %edx,%eax
+ 8048e76:	c1 e0 02             	shl    $0x2,%eax
+ 8048e79:	01 d0                	add    %edx,%eax
+ 8048e7b:	01 c0                	add    %eax,%eax
+ 8048e7d:	03 45 f0             	add    -0x10(%ebp),%eax
+ 8048e80:	8b 04 85 40 b3 04 08 	mov    0x804b340(,%eax,4),%eax
+ 8048e87:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 8048e8a:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+ 8048e8d:	01 d1                	add    %edx,%ecx
+ 8048e8f:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 8048e92:	8b 5d 08             	mov    0x8(%ebp),%ebx
+ 8048e95:	8d 14 13             	lea    (%ebx,%edx,1),%edx
+ 8048e98:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8048e9c:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048ea0:	89 14 24             	mov    %edx,(%esp)
+ 8048ea3:	e8 1a f9 ff ff       	call   80487c2 <print_one_pixel>
+{
+    int i = 0;
+    int j = 0;
+    
+    for(i = 0; i < C_H; i++){
+        for(j = 0; j < C_W; j++){
+ 8048ea8:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 8048eac:	83 7d f0 09          	cmpl   $0x9,-0x10(%ebp)
+ 8048eb0:	7e bf                	jle    8048e71 <restore+0x27>
+int restore(int x, int y)
+{
+    int i = 0;
+    int j = 0;
+    
+    for(i = 0; i < C_H; i++){
+ 8048eb2:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 8048eb6:	83 7d f4 10          	cmpl   $0x10,-0xc(%ebp)
+ 8048eba:	7e ac                	jle    8048e68 <restore+0x1e>
+        for(j = 0; j < C_W; j++){
+            print_one_pixel(x+j, y+i, shape_save[j+i*C_W]);
+        }
+    }
+
+    return 0;
+ 8048ebc:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048ec1:	83 c4 24             	add    $0x24,%esp
+ 8048ec4:	5b                   	pop    %ebx
+ 8048ec5:	5d                   	pop    %ebp
+ 8048ec6:	c3                   	ret    
+
+08048ec7 <draw_cursor>:
+
+
+
+
+int draw_cursor(int x, int y)
+{
+ 8048ec7:	55                   	push   %ebp
+ 8048ec8:	89 e5                	mov    %esp,%ebp
+ 8048eca:	53                   	push   %ebx
+ 8048ecb:	83 ec 24             	sub    $0x24,%esp
+    int i = 0;
+ 8048ece:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+    int j = 0;
+ 8048ed5:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+
+    save_shape(x, y);
+ 8048edc:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8048edf:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8048ee3:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048ee6:	89 04 24             	mov    %eax,(%esp)
+ 8048ee9:	e8 e2 fe ff ff       	call   8048dd0 <save_shape>
+
+    for(i = 0; i < C_H; i++){
+ 8048eee:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 8048ef5:	eb 4e                	jmp    8048f45 <draw_cursor+0x7e>
+        for(j = 0; j < C_W; j++){
+ 8048ef7:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 8048efe:	eb 3b                	jmp    8048f3b <draw_cursor+0x74>
+            print_one_pixel(x+j, y+i, cursor_pixel[j+i*C_W]);
+ 8048f00:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 8048f03:	89 d0                	mov    %edx,%eax
+ 8048f05:	c1 e0 02             	shl    $0x2,%eax
+ 8048f08:	01 d0                	add    %edx,%eax
+ 8048f0a:	01 c0                	add    %eax,%eax
+ 8048f0c:	03 45 f0             	add    -0x10(%ebp),%eax
+ 8048f0f:	8b 04 85 60 b0 04 08 	mov    0x804b060(,%eax,4),%eax
+ 8048f16:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 8048f19:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+ 8048f1c:	01 d1                	add    %edx,%ecx
+ 8048f1e:	8b 55 f0             	mov    -0x10(%ebp),%edx
+ 8048f21:	8b 5d 08             	mov    0x8(%ebp),%ebx
+ 8048f24:	8d 14 13             	lea    (%ebx,%edx,1),%edx
+ 8048f27:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8048f2b:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 8048f2f:	89 14 24             	mov    %edx,(%esp)
+ 8048f32:	e8 8b f8 ff ff       	call   80487c2 <print_one_pixel>
+    int j = 0;
+
+    save_shape(x, y);
+
+    for(i = 0; i < C_H; i++){
+        for(j = 0; j < C_W; j++){
+ 8048f37:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+ 8048f3b:	83 7d f0 09          	cmpl   $0x9,-0x10(%ebp)
+ 8048f3f:	7e bf                	jle    8048f00 <draw_cursor+0x39>
+    int i = 0;
+    int j = 0;
+
+    save_shape(x, y);
+
+    for(i = 0; i < C_H; i++){
+ 8048f41:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 8048f45:	83 7d f4 10          	cmpl   $0x10,-0xc(%ebp)
+ 8048f49:	7e ac                	jle    8048ef7 <draw_cursor+0x30>
+        for(j = 0; j < C_W; j++){
+            print_one_pixel(x+j, y+i, cursor_pixel[j+i*C_W]);
+        }
+    }
+
+    return 0;
+ 8048f4b:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8048f50:	83 c4 24             	add    $0x24,%esp
+ 8048f53:	5b                   	pop    %ebx
+ 8048f54:	5d                   	pop    %ebp
+ 8048f55:	c3                   	ret    
+
+08048f56 <get_mouse_data>:
+
+int get_mouse_data(int fd, mouse_event *p)
+{
+ 8048f56:	55                   	push   %ebp
+ 8048f57:	89 e5                	mov    %esp,%ebp
+ 8048f59:	83 ec 38             	sub    $0x38,%esp
+ 8048f5c:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8048f5f:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+ 8048f62:	65 a1 14 00 00 00    	mov    %gs:0x14,%eax
+ 8048f68:	89 45 f4             	mov    %eax,-0xc(%ebp)
+ 8048f6b:	31 c0                	xor    %eax,%eax
+    int n;
+    char buf[8];
+
+    n = read(fd, buf, 8);
+ 8048f6d:	c7 44 24 08 08 00 00 	movl   $0x8,0x8(%esp)
+ 8048f74:	00 
+ 8048f75:	8d 45 ec             	lea    -0x14(%ebp),%eax
+ 8048f78:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8048f7c:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048f7f:	89 04 24             	mov    %eax,(%esp)
+ 8048f82:	e8 01 f5 ff ff       	call   8048488 <read@plt>
+ 8048f87:	89 45 e8             	mov    %eax,-0x18(%ebp)
+    if(n > 0){
+ 8048f8a:	83 7d e8 00          	cmpl   $0x0,-0x18(%ebp)
+ 8048f8e:	7e 2f                	jle    8048fbf <get_mouse_data+0x69>
+        p->dx = buf[1];
+ 8048f90:	0f b6 45 ed          	movzbl -0x13(%ebp),%eax
+ 8048f94:	0f be d0             	movsbl %al,%edx
+ 8048f97:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 8048f9a:	89 10                	mov    %edx,(%eax)
+        p->dy = -buf[2];
+ 8048f9c:	0f b6 45 ee          	movzbl -0x12(%ebp),%eax
+ 8048fa0:	0f be c0             	movsbl %al,%eax
+ 8048fa3:	89 c2                	mov    %eax,%edx
+ 8048fa5:	f7 da                	neg    %edx
+ 8048fa7:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 8048faa:	89 50 04             	mov    %edx,0x4(%eax)
+        p->button = (buf[0]&0x07);
+ 8048fad:	0f b6 45 ec          	movzbl -0x14(%ebp),%eax
+ 8048fb1:	0f be c0             	movsbl %al,%eax
+ 8048fb4:	89 c2                	mov    %eax,%edx
+ 8048fb6:	83 e2 07             	and    $0x7,%edx
+ 8048fb9:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 8048fbc:	89 50 0c             	mov    %edx,0xc(%eax)
+    }
+
+    return n;
+ 8048fbf:	8b 45 e8             	mov    -0x18(%ebp),%eax
+}
+ 8048fc2:	8b 55 f4             	mov    -0xc(%ebp),%edx
+ 8048fc5:	65 33 15 14 00 00 00 	xor    %gs:0x14,%edx
+ 8048fcc:	74 05                	je     8048fd3 <get_mouse_data+0x7d>
+ 8048fce:	e8 15 f5 ff ff       	call   80484e8 <__stack_chk_fail@plt>
+ 8048fd3:	c9                   	leave  
+ 8048fd4:	c3                   	ret    
+
+08048fd5 <clear_board>:
+
+int clear_board(int x, int y){
+ 8048fd5:	55                   	push   %ebp
+ 8048fd6:	89 e5                	mov    %esp,%ebp
+ 8048fd8:	83 ec 28             	sub    $0x28,%esp
+    int i;
+
+    if((x > 25) && (x < 75) && (y > 575) && (y < 625)){
+ 8048fdb:	83 7d 08 19          	cmpl   $0x19,0x8(%ebp)
+ 8048fdf:	7e 73                	jle    8049054 <clear_board+0x7f>
+ 8048fe1:	83 7d 08 4a          	cmpl   $0x4a,0x8(%ebp)
+ 8048fe5:	7f 6d                	jg     8049054 <clear_board+0x7f>
+ 8048fe7:	81 7d 0c 3f 02 00 00 	cmpl   $0x23f,0xc(%ebp)
+ 8048fee:	7e 64                	jle    8049054 <clear_board+0x7f>
+ 8048ff0:	81 7d 0c 70 02 00 00 	cmpl   $0x270,0xc(%ebp)
+ 8048ff7:	7f 5b                	jg     8049054 <clear_board+0x7f>
+        current_color = WHITE;
+ 8048ff9:	c7 05 bc b8 04 08 ff 	movl   $0xffffff,0x804b8bc
+ 8049000:	ff ff 00 
+        current_player = 2;
+ 8049003:	c6 05 b8 b8 04 08 02 	movb   $0x2,0x804b8b8
+        diff = current_player;
+ 804900a:	0f b6 05 b8 b8 04 08 	movzbl 0x804b8b8,%eax
+ 8049011:	a2 28 b3 04 08       	mov    %al,0x804b328
+        for(i = 0; i < BOARD_Y*BOARD_X; i++){
+ 8049016:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 804901d:	eb 0e                	jmp    804902d <clear_board+0x58>
+            chess_board[i] = 0;
+ 804901f:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8049022:	c6 80 00 b6 04 08 00 	movb   $0x0,0x804b600(%eax)
+
+    if((x > 25) && (x < 75) && (y > 575) && (y < 625)){
+        current_color = WHITE;
+        current_player = 2;
+        diff = current_player;
+        for(i = 0; i < BOARD_Y*BOARD_X; i++){
+ 8049029:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 804902d:	81 7d f4 b7 02 00 00 	cmpl   $0x2b7,-0xc(%ebp)
+ 8049034:	7e e9                	jle    804901f <clear_board+0x4a>
+            chess_board[i] = 0;
+        }
+        print_board(); 
+ 8049036:	e8 d1 fa ff ff       	call   8048b0c <print_board>
+        draw_cursor(x,y);
+ 804903b:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 804903e:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8049042:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8049045:	89 04 24             	mov    %eax,(%esp)
+ 8049048:	e8 7a fe ff ff       	call   8048ec7 <draw_cursor>
+        return 0;
+ 804904d:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8049052:	eb 05                	jmp    8049059 <clear_board+0x84>
+    }
+    return -1;   
+ 8049054:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+}
+ 8049059:	c9                   	leave  
+ 804905a:	c3                   	ret    
+
+0804905b <mouse_doing>:
+int mouse_doing()
+{
+ 804905b:	55                   	push   %ebp
+ 804905c:	89 e5                	mov    %esp,%ebp
+ 804905e:	83 ec 38             	sub    $0x38,%esp
+    int mx = 512;
+ 8049061:	c7 45 f0 00 02 00 00 	movl   $0x200,-0x10(%ebp)
+    int my = 367;
+ 8049068:	c7 45 ec 6f 01 00 00 	movl   $0x16f,-0x14(%ebp)
+    int fd = 0;
+ 804906f:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%ebp)
+    char cursor_press = 0;
+ 8049076:	c6 45 f7 00          	movb   $0x0,-0x9(%ebp)
+    int flag = 0;
+ 804907a:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
+
+    fd = open("/dev/input/mice", O_RDWR|O_NONBLOCK);
+ 8049081:	c7 44 24 04 02 08 00 	movl   $0x802,0x4(%esp)
+ 8049088:	00 
+ 8049089:	c7 04 24 be 97 04 08 	movl   $0x80497be,(%esp)
+ 8049090:	e8 a3 f3 ff ff       	call   8048438 <open@plt>
+ 8049095:	89 45 e8             	mov    %eax,-0x18(%ebp)
+    if(fd == -1){
+ 8049098:	83 7d e8 ff          	cmpl   $0xffffffff,-0x18(%ebp)
+ 804909c:	75 18                	jne    80490b6 <mouse_doing+0x5b>
+        perror("open");
+ 804909e:	c7 04 24 ce 97 04 08 	movl   $0x80497ce,(%esp)
+ 80490a5:	e8 ee f3 ff ff       	call   8048498 <perror@plt>
+        exit(0);
+ 80490aa:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 80490b1:	e8 42 f4 ff ff       	call   80484f8 <exit@plt>
+    }
+    draw_cursor(mx, my);
+ 80490b6:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 80490b9:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 80490bd:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 80490c0:	89 04 24             	mov    %eax,(%esp)
+ 80490c3:	e8 ff fd ff ff       	call   8048ec7 <draw_cursor>
+
+    while(1){
+        if(get_mouse_data(fd, &m_event) > 0){
+ 80490c8:	c7 44 24 04 d0 b8 04 	movl   $0x804b8d0,0x4(%esp)
+ 80490cf:	08 
+ 80490d0:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 80490d3:	89 04 24             	mov    %eax,(%esp)
+ 80490d6:	e8 7b fe ff ff       	call   8048f56 <get_mouse_data>
+ 80490db:	85 c0                	test   %eax,%eax
+ 80490dd:	0f 8e bf 01 00 00    	jle    80492a2 <mouse_doing+0x247>
+            restore(mx, my);
+ 80490e3:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 80490e6:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 80490ea:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 80490ed:	89 04 24             	mov    %eax,(%esp)
+ 80490f0:	e8 55 fd ff ff       	call   8048e4a <restore>
+            mx += m_event.dx;
+ 80490f5:	a1 d0 b8 04 08       	mov    0x804b8d0,%eax
+ 80490fa:	01 45 f0             	add    %eax,-0x10(%ebp)
+            my += m_event.dy;
+ 80490fd:	a1 d4 b8 04 08       	mov    0x804b8d4,%eax
+ 8049102:	01 45 ec             	add    %eax,-0x14(%ebp)
+            
+            if(mx < 0){
+ 8049105:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
+ 8049109:	79 09                	jns    8049114 <mouse_doing+0xb9>
+                mx = 0;
+ 804910b:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+ 8049112:	eb 18                	jmp    804912c <mouse_doing+0xd1>
+            }else if(mx > fb_v.w - C_W){
+ 8049114:	a1 c0 b8 04 08       	mov    0x804b8c0,%eax
+ 8049119:	83 e8 0a             	sub    $0xa,%eax
+ 804911c:	3b 45 f0             	cmp    -0x10(%ebp),%eax
+ 804911f:	7d 0b                	jge    804912c <mouse_doing+0xd1>
+                mx = fb_v.w - C_W;
+ 8049121:	a1 c0 b8 04 08       	mov    0x804b8c0,%eax
+ 8049126:	83 e8 0a             	sub    $0xa,%eax
+ 8049129:	89 45 f0             	mov    %eax,-0x10(%ebp)
+             }
+
+            if(my < 0){
+ 804912c:	83 7d ec 00          	cmpl   $0x0,-0x14(%ebp)
+ 8049130:	79 09                	jns    804913b <mouse_doing+0xe0>
+                my = 0;
+ 8049132:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%ebp)
+ 8049139:	eb 18                	jmp    8049153 <mouse_doing+0xf8>
+            }else if(my > fb_v.h - C_H){
+ 804913b:	a1 c4 b8 04 08       	mov    0x804b8c4,%eax
+ 8049140:	83 e8 11             	sub    $0x11,%eax
+ 8049143:	3b 45 ec             	cmp    -0x14(%ebp),%eax
+ 8049146:	7d 0b                	jge    8049153 <mouse_doing+0xf8>
+                my = fb_v.h - C_H;
+ 8049148:	a1 c4 b8 04 08       	mov    0x804b8c4,%eax
+ 804914d:	83 e8 11             	sub    $0x11,%eax
+ 8049150:	89 45 ec             	mov    %eax,-0x14(%ebp)
+             }
+            draw_cursor(mx, my);    
+ 8049153:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 8049156:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 804915a:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 804915d:	89 04 24             	mov    %eax,(%esp)
+ 8049160:	e8 62 fd ff ff       	call   8048ec7 <draw_cursor>
+            switch(m_event.button){
+ 8049165:	a1 dc b8 04 08       	mov    0x804b8dc,%eax
+ 804916a:	85 c0                	test   %eax,%eax
+ 804916c:	74 0e                	je     804917c <mouse_doing+0x121>
+ 804916e:	83 f8 01             	cmp    $0x1,%eax
+ 8049171:	0f 84 f1 00 00 00    	je     8049268 <mouse_doing+0x20d>
+ 8049177:	e9 f6 00 00 00       	jmp    8049272 <mouse_doing+0x217>
+        
+                case 0  :  if(cursor_press == 1){
+ 804917c:	80 7d f7 01          	cmpb   $0x1,-0x9(%ebp)
+ 8049180:	0f 85 e8 00 00 00    	jne    804926e <mouse_doing+0x213>
+                                cursor_press = 0;
+ 8049186:	c6 45 f7 00          	movb   $0x0,-0x9(%ebp)
+                                if(flag == 0){
+ 804918a:	83 7d e4 00          	cmpl   $0x0,-0x1c(%ebp)
+ 804918e:	0f 85 bd 00 00 00    	jne    8049251 <mouse_doing+0x1f6>
+                                  flag = chess_doing(mx, my);
+ 8049194:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 8049197:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 804919b:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 804919e:	89 04 24             	mov    %eax,(%esp)
+ 80491a1:	e8 0e 01 00 00       	call   80492b4 <chess_doing>
+ 80491a6:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+                                  if((diff == 1)){    
+ 80491a9:	0f b6 05 28 b3 04 08 	movzbl 0x804b328,%eax
+ 80491b0:	3c 01                	cmp    $0x1,%al
+ 80491b2:	75 48                	jne    80491fc <mouse_doing+0x1a1>
+                                    print_circle(80, 230, 10, DARK_YELLOW);
+ 80491b4:	c7 44 24 0c 22 b4 ee 	movl   $0xeeb422,0xc(%esp)
+ 80491bb:	00 
+ 80491bc:	c7 44 24 08 0a 00 00 	movl   $0xa,0x8(%esp)
+ 80491c3:	00 
+ 80491c4:	c7 44 24 04 e6 00 00 	movl   $0xe6,0x4(%esp)
+ 80491cb:	00 
+ 80491cc:	c7 04 24 50 00 00 00 	movl   $0x50,(%esp)
+ 80491d3:	e8 c2 f7 ff ff       	call   804899a <print_circle>
+                                    print_circle(80, 130, 10, 0x00ffff00);
+ 80491d8:	c7 44 24 0c 00 ff ff 	movl   $0xffff00,0xc(%esp)
+ 80491df:	00 
+ 80491e0:	c7 44 24 08 0a 00 00 	movl   $0xa,0x8(%esp)
+ 80491e7:	00 
+ 80491e8:	c7 44 24 04 82 00 00 	movl   $0x82,0x4(%esp)
+ 80491ef:	00 
+ 80491f0:	c7 04 24 50 00 00 00 	movl   $0x50,(%esp)
+ 80491f7:	e8 9e f7 ff ff       	call   804899a <print_circle>
+                                  } 
+                                  if(diff == 2){
+ 80491fc:	0f b6 05 28 b3 04 08 	movzbl 0x804b328,%eax
+ 8049203:	3c 02                	cmp    $0x2,%al
+ 8049205:	75 6a                	jne    8049271 <mouse_doing+0x216>
+                                    print_circle(80, 130, 10, DARK_YELLOW);
+ 8049207:	c7 44 24 0c 22 b4 ee 	movl   $0xeeb422,0xc(%esp)
+ 804920e:	00 
+ 804920f:	c7 44 24 08 0a 00 00 	movl   $0xa,0x8(%esp)
+ 8049216:	00 
+ 8049217:	c7 44 24 04 82 00 00 	movl   $0x82,0x4(%esp)
+ 804921e:	00 
+ 804921f:	c7 04 24 50 00 00 00 	movl   $0x50,(%esp)
+ 8049226:	e8 6f f7 ff ff       	call   804899a <print_circle>
+                                    print_circle(80, 230, 10, 0x00ffff00);                                    
+ 804922b:	c7 44 24 0c 00 ff ff 	movl   $0xffff00,0xc(%esp)
+ 8049232:	00 
+ 8049233:	c7 44 24 08 0a 00 00 	movl   $0xa,0x8(%esp)
+ 804923a:	00 
+ 804923b:	c7 44 24 04 e6 00 00 	movl   $0xe6,0x4(%esp)
+ 8049242:	00 
+ 8049243:	c7 04 24 50 00 00 00 	movl   $0x50,(%esp)
+ 804924a:	e8 4b f7 ff ff       	call   804899a <print_circle>
+                                   }
+                                }else{
+                                    flag = clear_board(mx, my);
+                                 }
+                           }
+                           break;
+ 804924f:	eb 21                	jmp    8049272 <mouse_doing+0x217>
+                                  if(diff == 2){
+                                    print_circle(80, 130, 10, DARK_YELLOW);
+                                    print_circle(80, 230, 10, 0x00ffff00);                                    
+                                   }
+                                }else{
+                                    flag = clear_board(mx, my);
+ 8049251:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 8049254:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8049258:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 804925b:	89 04 24             	mov    %eax,(%esp)
+ 804925e:	e8 72 fd ff ff       	call   8048fd5 <clear_board>
+ 8049263:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+                                 }
+                           }
+                           break;
+ 8049266:	eb 0a                	jmp    8049272 <mouse_doing+0x217>
+                case 1  :  cursor_press = 1; break;         // chess_doing(mx, my);while(get_mouse_data(fd, &m_event)&&(m_event.button == 1));break;
+ 8049268:	c6 45 f7 01          	movb   $0x1,-0x9(%ebp)
+ 804926c:	eb 04                	jmp    8049272 <mouse_doing+0x217>
+                                   }
+                                }else{
+                                    flag = clear_board(mx, my);
+                                 }
+                           }
+                           break;
+ 804926e:	90                   	nop
+ 804926f:	eb 01                	jmp    8049272 <mouse_doing+0x217>
+ 8049271:	90                   	nop
+                case 1  :  cursor_press = 1; break;         // chess_doing(mx, my);while(get_mouse_data(fd, &m_event)&&(m_event.button == 1));break;
+                case 2  :  break;
+                case 3  :  break;
+                default :  break;
+            }
+            if(flag > 0){
+ 8049272:	83 7d e4 00          	cmpl   $0x0,-0x1c(%ebp)
+ 8049276:	7e 2a                	jle    80492a2 <mouse_doing+0x247>
+                print_smile();
+ 8049278:	e8 b6 fa ff ff       	call   8048d33 <print_smile>
+                print_circle(50, 700, 25, current_color);
+ 804927d:	a1 bc b8 04 08       	mov    0x804b8bc,%eax
+ 8049282:	89 44 24 0c          	mov    %eax,0xc(%esp)
+ 8049286:	c7 44 24 08 19 00 00 	movl   $0x19,0x8(%esp)
+ 804928d:	00 
+ 804928e:	c7 44 24 04 bc 02 00 	movl   $0x2bc,0x4(%esp)
+ 8049295:	00 
+ 8049296:	c7 04 24 32 00 00 00 	movl   $0x32,(%esp)
+ 804929d:	e8 f8 f6 ff ff       	call   804899a <print_circle>
+            }
+        }
+        usleep(1000);
+ 80492a2:	c7 04 24 e8 03 00 00 	movl   $0x3e8,(%esp)
+ 80492a9:	e8 fa f1 ff ff       	call   80484a8 <usleep@plt>
+    }
+ 80492ae:	e9 15 fe ff ff       	jmp    80490c8 <mouse_doing+0x6d>
+ 80492b3:	90                   	nop
+
+080492b4 <chess_doing>:
+extern char chess_board[BOARD_X*BOARD_Y];
+extern char current_player;
+extern char diff;
+
+int chess_doing(int x, int y)
+{
+ 80492b4:	55                   	push   %ebp
+ 80492b5:	89 e5                	mov    %esp,%ebp
+ 80492b7:	53                   	push   %ebx
+ 80492b8:	83 ec 24             	sub    $0x24,%esp
+    int m_x = x;
+ 80492bb:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80492be:	89 45 f4             	mov    %eax,-0xc(%ebp)
+    int m_y = y;
+ 80492c1:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80492c4:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    int dx = (x-ST_X)%SPACE;
+ 80492c7:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80492ca:	8d 88 38 ff ff ff    	lea    -0xc8(%eax),%ecx
+ 80492d0:	ba 89 88 88 88       	mov    $0x88888889,%edx
+ 80492d5:	89 c8                	mov    %ecx,%eax
+ 80492d7:	f7 ea                	imul   %edx
+ 80492d9:	8d 04 0a             	lea    (%edx,%ecx,1),%eax
+ 80492dc:	89 c2                	mov    %eax,%edx
+ 80492de:	c1 fa 04             	sar    $0x4,%edx
+ 80492e1:	89 c8                	mov    %ecx,%eax
+ 80492e3:	c1 f8 1f             	sar    $0x1f,%eax
+ 80492e6:	89 d3                	mov    %edx,%ebx
+ 80492e8:	29 c3                	sub    %eax,%ebx
+ 80492ea:	89 d8                	mov    %ebx,%eax
+ 80492ec:	89 45 ec             	mov    %eax,-0x14(%ebp)
+ 80492ef:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 80492f2:	01 c0                	add    %eax,%eax
+ 80492f4:	89 c2                	mov    %eax,%edx
+ 80492f6:	c1 e2 04             	shl    $0x4,%edx
+ 80492f9:	29 c2                	sub    %eax,%edx
+ 80492fb:	89 c8                	mov    %ecx,%eax
+ 80492fd:	29 d0                	sub    %edx,%eax
+ 80492ff:	89 45 ec             	mov    %eax,-0x14(%ebp)
+    int dy = (y-ST_Y)%SPACE;
+ 8049302:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8049305:	8d 48 d8             	lea    -0x28(%eax),%ecx
+ 8049308:	ba 89 88 88 88       	mov    $0x88888889,%edx
+ 804930d:	89 c8                	mov    %ecx,%eax
+ 804930f:	f7 ea                	imul   %edx
+ 8049311:	8d 04 0a             	lea    (%edx,%ecx,1),%eax
+ 8049314:	89 c2                	mov    %eax,%edx
+ 8049316:	c1 fa 04             	sar    $0x4,%edx
+ 8049319:	89 c8                	mov    %ecx,%eax
+ 804931b:	c1 f8 1f             	sar    $0x1f,%eax
+ 804931e:	89 d3                	mov    %edx,%ebx
+ 8049320:	29 c3                	sub    %eax,%ebx
+ 8049322:	89 d8                	mov    %ebx,%eax
+ 8049324:	89 45 e8             	mov    %eax,-0x18(%ebp)
+ 8049327:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 804932a:	01 c0                	add    %eax,%eax
+ 804932c:	89 c2                	mov    %eax,%edx
+ 804932e:	c1 e2 04             	shl    $0x4,%edx
+ 8049331:	29 c2                	sub    %eax,%edx
+ 8049333:	89 c8                	mov    %ecx,%eax
+ 8049335:	29 d0                	sub    %edx,%eax
+ 8049337:	89 45 e8             	mov    %eax,-0x18(%ebp)
+    
+    if(x < ST_X || x > ST_X+SPACE*(BOARD_X-1)){
+ 804933a:	81 7d 08 c7 00 00 00 	cmpl   $0xc7,0x8(%ebp)
+ 8049341:	7e 09                	jle    804934c <chess_doing+0x98>
+ 8049343:	81 7d 08 10 04 00 00 	cmpl   $0x410,0x8(%ebp)
+ 804934a:	7e 78                	jle    80493c4 <chess_doing+0x110>
+        
+        if((x > 25)&&(x < 75)&&(y > 75)&&(y < 125)&&(current_player == 1)){
+ 804934c:	83 7d 08 19          	cmpl   $0x19,0x8(%ebp)
+ 8049350:	7e 2e                	jle    8049380 <chess_doing+0xcc>
+ 8049352:	83 7d 08 4a          	cmpl   $0x4a,0x8(%ebp)
+ 8049356:	7f 28                	jg     8049380 <chess_doing+0xcc>
+ 8049358:	83 7d 0c 4b          	cmpl   $0x4b,0xc(%ebp)
+ 804935c:	7e 22                	jle    8049380 <chess_doing+0xcc>
+ 804935e:	83 7d 0c 7c          	cmpl   $0x7c,0xc(%ebp)
+ 8049362:	7f 1c                	jg     8049380 <chess_doing+0xcc>
+ 8049364:	0f b6 05 b8 b8 04 08 	movzbl 0x804b8b8,%eax
+ 804936b:	3c 01                	cmp    $0x1,%al
+ 804936d:	75 11                	jne    8049380 <chess_doing+0xcc>
+            current_color = WHITE;
+ 804936f:	c7 05 bc b8 04 08 ff 	movl   $0xffffff,0x804b8bc
+ 8049376:	ff ff 00 
+            current_player = 2;
+ 8049379:	c6 05 b8 b8 04 08 02 	movb   $0x2,0x804b8b8
+        }    
+        if((x > 25)&&(x < 75)&&(y > 175)&&(y < 225)&&(current_player == 2)){
+ 8049380:	83 7d 08 19          	cmpl   $0x19,0x8(%ebp)
+ 8049384:	7e 34                	jle    80493ba <chess_doing+0x106>
+ 8049386:	83 7d 08 4a          	cmpl   $0x4a,0x8(%ebp)
+ 804938a:	7f 2e                	jg     80493ba <chess_doing+0x106>
+ 804938c:	81 7d 0c af 00 00 00 	cmpl   $0xaf,0xc(%ebp)
+ 8049393:	7e 25                	jle    80493ba <chess_doing+0x106>
+ 8049395:	81 7d 0c e0 00 00 00 	cmpl   $0xe0,0xc(%ebp)
+ 804939c:	7f 1c                	jg     80493ba <chess_doing+0x106>
+ 804939e:	0f b6 05 b8 b8 04 08 	movzbl 0x804b8b8,%eax
+ 80493a5:	3c 02                	cmp    $0x2,%al
+ 80493a7:	75 11                	jne    80493ba <chess_doing+0x106>
+            current_color = BLACK;
+ 80493a9:	c7 05 bc b8 04 08 00 	movl   $0x0,0x804b8bc
+ 80493b0:	00 00 00 
+            current_player = 1;
+ 80493b3:	c6 05 b8 b8 04 08 01 	movb   $0x1,0x804b8b8
+        } 
+
+        return 0;
+ 80493ba:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80493bf:	e9 39 01 00 00       	jmp    80494fd <chess_doing+0x249>
+     }
+
+
+    if(y < ST_Y || y > ST_Y+SPACE*(BOARD_Y-1)){
+ 80493c4:	83 7d 0c 27          	cmpl   $0x27,0xc(%ebp)
+ 80493c8:	7e 09                	jle    80493d3 <chess_doing+0x11f>
+ 80493ca:	81 7d 0c da 02 00 00 	cmpl   $0x2da,0xc(%ebp)
+ 80493d1:	7e 0a                	jle    80493dd <chess_doing+0x129>
+        
+        return 0;
+ 80493d3:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80493d8:	e9 20 01 00 00       	jmp    80494fd <chess_doing+0x249>
+    }
+
+    /*adjust*/
+    if(dx < SPACE/2){
+ 80493dd:	83 7d ec 0e          	cmpl   $0xe,-0x14(%ebp)
+ 80493e1:	7f 08                	jg     80493eb <chess_doing+0x137>
+        x -= dx;
+ 80493e3:	8b 45 ec             	mov    -0x14(%ebp),%eax
+ 80493e6:	29 45 08             	sub    %eax,0x8(%ebp)
+ 80493e9:	eb 0b                	jmp    80493f6 <chess_doing+0x142>
+    }else{
+        x +=(SPACE-dx);
+ 80493eb:	b8 1e 00 00 00       	mov    $0x1e,%eax
+ 80493f0:	2b 45 ec             	sub    -0x14(%ebp),%eax
+ 80493f3:	01 45 08             	add    %eax,0x8(%ebp)
+     }
+    if(dy < SPACE/2){
+ 80493f6:	83 7d e8 0e          	cmpl   $0xe,-0x18(%ebp)
+ 80493fa:	7f 08                	jg     8049404 <chess_doing+0x150>
+        y -= dy;
+ 80493fc:	8b 45 e8             	mov    -0x18(%ebp),%eax
+ 80493ff:	29 45 0c             	sub    %eax,0xc(%ebp)
+ 8049402:	eb 0b                	jmp    804940f <chess_doing+0x15b>
+    }else{
+        y +=(SPACE-dy);
+ 8049404:	b8 1e 00 00 00       	mov    $0x1e,%eax
+ 8049409:	2b 45 e8             	sub    -0x18(%ebp),%eax
+ 804940c:	01 45 0c             	add    %eax,0xc(%ebp)
+     
+     }
+
+    if((diff != current_player)&&(chess_board[(x-ST_X)/SPACE+BOARD_X*(y-ST_Y)/SPACE]) == 0){ 
+ 804940f:	0f b6 15 28 b3 04 08 	movzbl 0x804b328,%edx
+ 8049416:	0f b6 05 b8 b8 04 08 	movzbl 0x804b8b8,%eax
+ 804941d:	38 c2                	cmp    %al,%dl
+ 804941f:	0f 84 be 00 00 00    	je     80494e3 <chess_doing+0x22f>
+ 8049425:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8049428:	8d 88 38 ff ff ff    	lea    -0xc8(%eax),%ecx
+ 804942e:	ba 89 88 88 88       	mov    $0x88888889,%edx
+ 8049433:	89 c8                	mov    %ecx,%eax
+ 8049435:	f7 ea                	imul   %edx
+ 8049437:	8d 04 0a             	lea    (%edx,%ecx,1),%eax
+ 804943a:	89 c2                	mov    %eax,%edx
+ 804943c:	c1 fa 04             	sar    $0x4,%edx
+ 804943f:	89 c8                	mov    %ecx,%eax
+ 8049441:	c1 f8 1f             	sar    $0x1f,%eax
+ 8049444:	89 d3                	mov    %edx,%ebx
+ 8049446:	29 c3                	sub    %eax,%ebx
+ 8049448:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 804944b:	6b c0 1d             	imul   $0x1d,%eax,%eax
+ 804944e:	8d 88 78 fb ff ff    	lea    -0x488(%eax),%ecx
+ 8049454:	ba 89 88 88 88       	mov    $0x88888889,%edx
+ 8049459:	89 c8                	mov    %ecx,%eax
+ 804945b:	f7 ea                	imul   %edx
+ 804945d:	8d 04 0a             	lea    (%edx,%ecx,1),%eax
+ 8049460:	89 c2                	mov    %eax,%edx
+ 8049462:	c1 fa 04             	sar    $0x4,%edx
+ 8049465:	89 c8                	mov    %ecx,%eax
+ 8049467:	c1 f8 1f             	sar    $0x1f,%eax
+ 804946a:	89 d1                	mov    %edx,%ecx
+ 804946c:	29 c1                	sub    %eax,%ecx
+ 804946e:	89 c8                	mov    %ecx,%eax
+ 8049470:	8d 04 03             	lea    (%ebx,%eax,1),%eax
+ 8049473:	0f b6 80 00 b6 04 08 	movzbl 0x804b600(%eax),%eax
+ 804947a:	84 c0                	test   %al,%al
+ 804947c:	75 65                	jne    80494e3 <chess_doing+0x22f>
+        restore(m_x, m_y);
+ 804947e:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8049481:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8049485:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8049488:	89 04 24             	mov    %eax,(%esp)
+ 804948b:	e8 ba f9 ff ff       	call   8048e4a <restore>
+    //    restore(80, 230);
+        print_circle(x, y, 13, current_color);
+ 8049490:	a1 bc b8 04 08       	mov    0x804b8bc,%eax
+ 8049495:	89 44 24 0c          	mov    %eax,0xc(%esp)
+ 8049499:	c7 44 24 08 0d 00 00 	movl   $0xd,0x8(%esp)
+ 80494a0:	00 
+ 80494a1:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80494a4:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 80494a8:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80494ab:	89 04 24             	mov    %eax,(%esp)
+ 80494ae:	e8 e7 f4 ff ff       	call   804899a <print_circle>
+        diff = current_player;
+ 80494b3:	0f b6 05 b8 b8 04 08 	movzbl 0x804b8b8,%eax
+ 80494ba:	a2 28 b3 04 08       	mov    %al,0x804b328
+        draw_cursor(m_x, m_y);
+ 80494bf:	8b 45 f0             	mov    -0x10(%ebp),%eax
+ 80494c2:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 80494c6:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 80494c9:	89 04 24             	mov    %eax,(%esp)
+ 80494cc:	e8 f6 f9 ff ff       	call   8048ec7 <draw_cursor>
+        chess_sort(x, y);
+ 80494d1:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80494d4:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 80494d8:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80494db:	89 04 24             	mov    %eax,(%esp)
+ 80494de:	e8 20 00 00 00       	call   8049503 <chess_sort>
+      //  draw_cursor(80, 130);
+    }
+   
+   // print_logical();
+    if(chess_vic() != 0){
+ 80494e3:	e8 79 01 00 00       	call   8049661 <chess_vic>
+ 80494e8:	85 c0                	test   %eax,%eax
+ 80494ea:	74 0c                	je     80494f8 <chess_doing+0x244>
+      //  print_smile();
+        return current_player;
+ 80494ec:	0f b6 05 b8 b8 04 08 	movzbl 0x804b8b8,%eax
+ 80494f3:	0f be c0             	movsbl %al,%eax
+ 80494f6:	eb 05                	jmp    80494fd <chess_doing+0x249>
+    }
+    return 0;
+ 80494f8:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 80494fd:	83 c4 24             	add    $0x24,%esp
+ 8049500:	5b                   	pop    %ebx
+ 8049501:	5d                   	pop    %ebp
+ 8049502:	c3                   	ret    
+
+08049503 <chess_sort>:
+
+int chess_sort(int x, int y)
+{
+ 8049503:	55                   	push   %ebp
+ 8049504:	89 e5                	mov    %esp,%ebp
+ 8049506:	83 ec 10             	sub    $0x10,%esp
+    int c_x = (x-ST_X)/SPACE;//logical value
+ 8049509:	8b 45 08             	mov    0x8(%ebp),%eax
+ 804950c:	8d 88 38 ff ff ff    	lea    -0xc8(%eax),%ecx
+ 8049512:	ba 89 88 88 88       	mov    $0x88888889,%edx
+ 8049517:	89 c8                	mov    %ecx,%eax
+ 8049519:	f7 ea                	imul   %edx
+ 804951b:	8d 04 0a             	lea    (%edx,%ecx,1),%eax
+ 804951e:	89 c2                	mov    %eax,%edx
+ 8049520:	c1 fa 04             	sar    $0x4,%edx
+ 8049523:	89 c8                	mov    %ecx,%eax
+ 8049525:	c1 f8 1f             	sar    $0x1f,%eax
+ 8049528:	89 d1                	mov    %edx,%ecx
+ 804952a:	29 c1                	sub    %eax,%ecx
+ 804952c:	89 c8                	mov    %ecx,%eax
+ 804952e:	89 45 fc             	mov    %eax,-0x4(%ebp)
+    int c_y = (y-ST_Y)/SPACE;
+ 8049531:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8049534:	8d 48 d8             	lea    -0x28(%eax),%ecx
+ 8049537:	ba 89 88 88 88       	mov    $0x88888889,%edx
+ 804953c:	89 c8                	mov    %ecx,%eax
+ 804953e:	f7 ea                	imul   %edx
+ 8049540:	8d 04 0a             	lea    (%edx,%ecx,1),%eax
+ 8049543:	89 c2                	mov    %eax,%edx
+ 8049545:	c1 fa 04             	sar    $0x4,%edx
+ 8049548:	89 c8                	mov    %ecx,%eax
+ 804954a:	c1 f8 1f             	sar    $0x1f,%eax
+ 804954d:	89 d1                	mov    %edx,%ecx
+ 804954f:	29 c1                	sub    %eax,%ecx
+ 8049551:	89 c8                	mov    %ecx,%eax
+ 8049553:	89 45 f8             	mov    %eax,-0x8(%ebp)
+
+    chess_board[c_x+c_y*BOARD_X] = current_player;
+ 8049556:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 8049559:	6b c0 1d             	imul   $0x1d,%eax,%eax
+ 804955c:	03 45 fc             	add    -0x4(%ebp),%eax
+ 804955f:	0f b6 15 b8 b8 04 08 	movzbl 0x804b8b8,%edx
+ 8049566:	88 90 00 b6 04 08    	mov    %dl,0x804b600(%eax)
+    return 0;
+ 804956c:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 8049571:	c9                   	leave  
+ 8049572:	c3                   	ret    
+
+08049573 <check_one>:
+    }
+    return 0;
+}*/
+
+int check_one(int x, int y)
+{
+ 8049573:	55                   	push   %ebp
+ 8049574:	89 e5                	mov    %esp,%ebp
+ 8049576:	83 ec 20             	sub    $0x20,%esp
+    int i = 0, j = 0;
+ 8049579:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+ 8049580:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+    int cnt = 0;
+ 8049587:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+    char player = chess_board[x+y*BOARD_X];
+ 804958e:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8049591:	6b c0 1d             	imul   $0x1d,%eax,%eax
+ 8049594:	03 45 08             	add    0x8(%ebp),%eax
+ 8049597:	0f b6 80 00 b6 04 08 	movzbl 0x804b600(%eax),%eax
+ 804959e:	88 45 ff             	mov    %al,-0x1(%ebp)
+    char na[4] = {1, 0, 1, 1};
+ 80495a1:	c6 45 ec 01          	movb   $0x1,-0x14(%ebp)
+ 80495a5:	c6 45 ed 00          	movb   $0x0,-0x13(%ebp)
+ 80495a9:	c6 45 ee 01          	movb   $0x1,-0x12(%ebp)
+ 80495ad:	c6 45 ef 01          	movb   $0x1,-0x11(%ebp)
+    char ma[4] = {0, 1, 1, -1};
+ 80495b1:	c6 45 e8 00          	movb   $0x0,-0x18(%ebp)
+ 80495b5:	c6 45 e9 01          	movb   $0x1,-0x17(%ebp)
+ 80495b9:	c6 45 ea 01          	movb   $0x1,-0x16(%ebp)
+ 80495bd:	c6 45 eb ff          	movb   $0xff,-0x15(%ebp)
+    int sx = x;
+ 80495c1:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80495c4:	89 45 e4             	mov    %eax,-0x1c(%ebp)
+    int sy = y;
+ 80495c7:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80495ca:	89 45 e0             	mov    %eax,-0x20(%ebp)
+    
+    if(player == 0)
+ 80495cd:	80 7d ff 00          	cmpb   $0x0,-0x1(%ebp)
+ 80495d1:	75 0a                	jne    80495dd <check_one+0x6a>
+        return 0;
+ 80495d3:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80495d8:	e9 82 00 00 00       	jmp    804965f <check_one+0xec>
+    for(j = 0; j < 4; j++){    //four direction
+ 80495dd:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+ 80495e4:	eb 6e                	jmp    8049654 <check_one+0xe1>
+        x = sx;
+ 80495e6:	8b 45 e4             	mov    -0x1c(%ebp),%eax
+ 80495e9:	89 45 08             	mov    %eax,0x8(%ebp)
+        y = sy;
+ 80495ec:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 80495ef:	89 45 0c             	mov    %eax,0xc(%ebp)
+        cnt = 1;
+ 80495f2:	c7 45 f0 01 00 00 00 	movl   $0x1,-0x10(%ebp)
+        for(i = 1; i < 5; i++){  //four same chess
+ 80495f9:	c7 45 f8 01 00 00 00 	movl   $0x1,-0x8(%ebp)
+ 8049600:	eb 39                	jmp    804963b <check_one+0xc8>
+            x += na[j];
+ 8049602:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8049605:	0f b6 44 05 ec       	movzbl -0x14(%ebp,%eax,1),%eax
+ 804960a:	0f be c0             	movsbl %al,%eax
+ 804960d:	01 45 08             	add    %eax,0x8(%ebp)
+            y += ma[j];
+ 8049610:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8049613:	0f b6 44 05 e8       	movzbl -0x18(%ebp,%eax,1),%eax
+ 8049618:	0f be c0             	movsbl %al,%eax
+ 804961b:	01 45 0c             	add    %eax,0xc(%ebp)
+            if(chess_board[x+y*BOARD_X] == player){
+ 804961e:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8049621:	6b c0 1d             	imul   $0x1d,%eax,%eax
+ 8049624:	03 45 08             	add    0x8(%ebp),%eax
+ 8049627:	0f b6 80 00 b6 04 08 	movzbl 0x804b600(%eax),%eax
+ 804962e:	3a 45 ff             	cmp    -0x1(%ebp),%al
+ 8049631:	75 10                	jne    8049643 <check_one+0xd0>
+                cnt++;
+ 8049633:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+        return 0;
+    for(j = 0; j < 4; j++){    //four direction
+        x = sx;
+        y = sy;
+        cnt = 1;
+        for(i = 1; i < 5; i++){  //four same chess
+ 8049637:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+ 804963b:	83 7d f8 04          	cmpl   $0x4,-0x8(%ebp)
+ 804963f:	7e c1                	jle    8049602 <check_one+0x8f>
+ 8049641:	eb 01                	jmp    8049644 <check_one+0xd1>
+            x += na[j];
+            y += ma[j];
+            if(chess_board[x+y*BOARD_X] == player){
+                cnt++;
+            }else{
+                break;
+ 8049643:	90                   	nop
+             }
+                
+            }
+        if(cnt == 5){
+ 8049644:	83 7d f0 05          	cmpl   $0x5,-0x10(%ebp)
+ 8049648:	75 06                	jne    8049650 <check_one+0xdd>
+            return player;
+ 804964a:	0f be 45 ff          	movsbl -0x1(%ebp),%eax
+ 804964e:	eb 0f                	jmp    804965f <check_one+0xec>
+    int sx = x;
+    int sy = y;
+    
+    if(player == 0)
+        return 0;
+    for(j = 0; j < 4; j++){    //four direction
+ 8049650:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+ 8049654:	83 7d f4 03          	cmpl   $0x3,-0xc(%ebp)
+ 8049658:	7e 8c                	jle    80495e6 <check_one+0x73>
+            }
+        if(cnt == 5){
+            return player;
+        }
+    }
+    return 0;
+ 804965a:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 804965f:	c9                   	leave  
+ 8049660:	c3                   	ret    
+
+08049661 <chess_vic>:
+
+int chess_vic(void)
+{
+ 8049661:	55                   	push   %ebp
+ 8049662:	89 e5                	mov    %esp,%ebp
+ 8049664:	83 ec 18             	sub    $0x18,%esp
+    int i = 0;
+ 8049667:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+    int j = 0;
+ 804966e:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+    int res = 0;
+ 8049675:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+
+    for(j = 0; j < BOARD_Y; j++){
+ 804967c:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+ 8049683:	eb 37                	jmp    80496bc <chess_vic+0x5b>
+        for(i = 0; i < BOARD_X; i++){
+ 8049685:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+ 804968c:	eb 24                	jmp    80496b2 <chess_vic+0x51>
+            res = check_one(i, j);
+ 804968e:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 8049691:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8049695:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 8049698:	89 04 24             	mov    %eax,(%esp)
+ 804969b:	e8 d3 fe ff ff       	call   8049573 <check_one>
+ 80496a0:	89 45 f4             	mov    %eax,-0xc(%ebp)
+            if(res != 0){
+ 80496a3:	83 7d f4 00          	cmpl   $0x0,-0xc(%ebp)
+ 80496a7:	74 05                	je     80496ae <chess_vic+0x4d>
+                return res;
+ 80496a9:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 80496ac:	eb 19                	jmp    80496c7 <chess_vic+0x66>
+    int i = 0;
+    int j = 0;
+    int res = 0;
+
+    for(j = 0; j < BOARD_Y; j++){
+        for(i = 0; i < BOARD_X; i++){
+ 80496ae:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+ 80496b2:	83 7d fc 1c          	cmpl   $0x1c,-0x4(%ebp)
+ 80496b6:	7e d6                	jle    804968e <chess_vic+0x2d>
+{
+    int i = 0;
+    int j = 0;
+    int res = 0;
+
+    for(j = 0; j < BOARD_Y; j++){
+ 80496b8:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+ 80496bc:	83 7d f8 17          	cmpl   $0x17,-0x8(%ebp)
+ 80496c0:	7e c3                	jle    8049685 <chess_vic+0x24>
+                return res;
+            }
+        }    
+    }
+
+    return 0;
+ 80496c2:	b8 00 00 00 00       	mov    $0x0,%eax
+}
+ 80496c7:	c9                   	leave  
+ 80496c8:	c3                   	ret    
+ 80496c9:	90                   	nop
+ 80496ca:	90                   	nop
+ 80496cb:	90                   	nop
+ 80496cc:	90                   	nop
+ 80496cd:	90                   	nop
+ 80496ce:	90                   	nop
+ 80496cf:	90                   	nop
+
+080496d0 <__libc_csu_fini>:
+ 80496d0:	55                   	push   %ebp
+ 80496d1:	89 e5                	mov    %esp,%ebp
+ 80496d3:	5d                   	pop    %ebp
+ 80496d4:	c3                   	ret    
+ 80496d5:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
+ 80496d9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,%eiz,1),%edi
+
+080496e0 <__libc_csu_init>:
+ 80496e0:	55                   	push   %ebp
+ 80496e1:	89 e5                	mov    %esp,%ebp
+ 80496e3:	57                   	push   %edi
+ 80496e4:	56                   	push   %esi
+ 80496e5:	53                   	push   %ebx
+ 80496e6:	e8 4f 00 00 00       	call   804973a <__i686.get_pc_thunk.bx>
+ 80496eb:	81 c3 09 19 00 00    	add    $0x1909,%ebx
+ 80496f1:	83 ec 1c             	sub    $0x1c,%esp
+ 80496f4:	e8 ff ec ff ff       	call   80483f8 <_init>
+ 80496f9:	8d bb 20 ff ff ff    	lea    -0xe0(%ebx),%edi
+ 80496ff:	8d 83 20 ff ff ff    	lea    -0xe0(%ebx),%eax
+ 8049705:	29 c7                	sub    %eax,%edi
+ 8049707:	c1 ff 02             	sar    $0x2,%edi
+ 804970a:	85 ff                	test   %edi,%edi
+ 804970c:	74 24                	je     8049732 <__libc_csu_init+0x52>
+ 804970e:	31 f6                	xor    %esi,%esi
+ 8049710:	8b 45 10             	mov    0x10(%ebp),%eax
+ 8049713:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8049717:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 804971a:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 804971e:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8049721:	89 04 24             	mov    %eax,(%esp)
+ 8049724:	ff 94 b3 20 ff ff ff 	call   *-0xe0(%ebx,%esi,4)
+ 804972b:	83 c6 01             	add    $0x1,%esi
+ 804972e:	39 fe                	cmp    %edi,%esi
+ 8049730:	72 de                	jb     8049710 <__libc_csu_init+0x30>
+ 8049732:	83 c4 1c             	add    $0x1c,%esp
+ 8049735:	5b                   	pop    %ebx
+ 8049736:	5e                   	pop    %esi
+ 8049737:	5f                   	pop    %edi
+ 8049738:	5d                   	pop    %ebp
+ 8049739:	c3                   	ret    
+
+0804973a <__i686.get_pc_thunk.bx>:
+ 804973a:	8b 1c 24             	mov    (%esp),%ebx
+ 804973d:	c3                   	ret    
+ 804973e:	90                   	nop
+ 804973f:	90                   	nop
+
+08049740 <__do_global_ctors_aux>:
+ 8049740:	55                   	push   %ebp
+ 8049741:	89 e5                	mov    %esp,%ebp
+ 8049743:	53                   	push   %ebx
+ 8049744:	83 ec 04             	sub    $0x4,%esp
+ 8049747:	a1 14 af 04 08       	mov    0x804af14,%eax
+ 804974c:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 804974f:	74 13                	je     8049764 <__do_global_ctors_aux+0x24>
+ 8049751:	bb 14 af 04 08       	mov    $0x804af14,%ebx
+ 8049756:	66 90                	xchg   %ax,%ax
+ 8049758:	83 eb 04             	sub    $0x4,%ebx
+ 804975b:	ff d0                	call   *%eax
+ 804975d:	8b 03                	mov    (%ebx),%eax
+ 804975f:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 8049762:	75 f4                	jne    8049758 <__do_global_ctors_aux+0x18>
+ 8049764:	83 c4 04             	add    $0x4,%esp
+ 8049767:	5b                   	pop    %ebx
+ 8049768:	5d                   	pop    %ebp
+ 8049769:	c3                   	ret    
+ 804976a:	90                   	nop
+ 804976b:	90                   	nop
+
+Disassembly of section .fini:
+
+0804976c <_fini>:
+ 804976c:	55                   	push   %ebp
+ 804976d:	89 e5                	mov    %esp,%ebp
+ 804976f:	53                   	push   %ebx
+ 8049770:	83 ec 04             	sub    $0x4,%esp
+ 8049773:	e8 00 00 00 00       	call   8049778 <_fini+0xc>
+ 8049778:	5b                   	pop    %ebx
+ 8049779:	81 c3 7c 18 00 00    	add    $0x187c,%ebx
+ 804977f:	e8 bc ed ff ff       	call   8048540 <__do_global_dtors_aux>
+ 8049784:	59                   	pop    %ecx
+ 8049785:	5b                   	pop    %ebx
+ 8049786:	c9                   	leave  
+ 8049787:	c3                   	ret    
